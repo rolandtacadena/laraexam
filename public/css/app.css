@@ -1,0 +1,228 @@
+/*
+* Laravel Exam - main styles
+*/
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.off-canvas-content, .off-canvas-content {
+    box-shadow: none; }
+
+#widemenu {
+    padding: 0;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+#widemenu,
+#widemenu .top-bar-left ul,
+#widemenu .top-bar-right ul{
+    background-color: #fff; }
+
+.mobile-bar {
+    background-color: #074e68;
+}
+
+#widemenu li.menu-text {
+    padding: 16px;
+    color: #fff;
+    background-color: #074e68; }
+
+#widemenu li.has-submenu {
+    /*border-left: 1px solid #4d4d4d;*/
+    border-right: none;  }
+
+/*#widemenu li.has-submenu:last-child {*/
+/*border-right: 1px solid #4d4d4d; }*/
+#widemenu ul > li:hover {
+    border-bottom: 1px solid #074e68;
+}
+
+#widemenu li.site-logo:hover,
+#widemenu li.has-submenu:hover,
+#widemenu li.has-submenu:hover ul > li { border-bottom: none; }
+
+
+#widemenu li:hover > a {
+    /*color: #fff;*/
+}
+.site-logo, .site-logo-mobile {
+    color: #e6e6e6; text-transform: uppercase; }
+
+#widemenu ul li a {
+    color: #525252; }
+
+#widemenu .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    border-color: #666 transparent transparent; }
+
+.home-hero {
+    padding: 7em 0;
+}
+
+.home-hero h1, .home-hero h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+.features {
+    margin-bottom: 3em;
+}
+
+.features h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center; }
+
+.features img {
+    display: block;
+    padding: 1.25rem;
+    margin: 1rem auto 0 auto;
+    height: 90%;
+    width: 90%;
+}
+
+.subject-list {
+    margin-bottom: 3em;
+}
+
+.subject-list h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.student-panel,
+.teacher-panel {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 15px 0;
+}
+
+.student-panel-right-col-header,
+.teacher-panel-right-col-header {
+    position: relative;
+}
+
+.teacher-panel-right-col-header .add-subj {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.student-panel-right-col-header h2,
+.teacher-panel-right-col-header h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2em;
+}
+
+#student-menu ul,
+#teacher-menu ul {
+    background-color: #fafafa;
+}
+
+#student-menu a,
+#teacher-menu a {
+    color: #525252;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#student-menu li>a:hover,
+#teacher-menu li>a:hover {
+    border-left: 2px solid #074e68;
+}
+
+#student-menu a:hover,
+#teacher-menu a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    font-weight: bold;
+}
+
+.student-panel .student-panel-nav-title,
+.teacher-panel .teacher-panel-nav-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: bold;
+    line-height: 1;
+    padding-left: 0.9rem;
+    margin-bottom: 0.5rem;
+    border-top: 1px solid #e9e9e9;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+}
+
+.student-panel-main-title,
+.teacher-panel-main-title {
+    padding-left: 0.9rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.exam-list .columns:last-child:not(:first-child) {
+    float: left;
+}
+
+.container-hover {
+    margin-bottom: 3.8rem;
+    border-radius: 3px;
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.25rem;
+    transition: all .25s ease-in-out;
+}
+
+.container-hover:hover {
+    background: #f8f8f8;
+    transition: all .25s ease-in-out;
+}
+
+.exam-list .exam-container .exam-logo {
+    max-width: 80%;
+}
+
+.exam-container .badge {
+    float: right;
+}
+
+.student-list {
+    color: #525252;
+    font-size: 1rem;
+}
+
+.student-exam-form {
+    padding: 20px 0;
+}
+
+.student-exam-form input {
+
+}
+
+.question-title {
+    font-size: 1.5rem;
+}
+
+footer.main {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 20px 0;
+    color: #fff;
+    background: #074e68;
+    font-weight: 400;
+}
+
+.subj-exam {
+    text-align: left;
+}
+
+.sub-details {
+    text-align: left;
+}
+
+footer.main h3, footer.main h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer.main a {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff; }
+
+

@@ -11,11 +11,34 @@
 |
 */
 
+/*
+ * User Model Factory
+ */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'email' => $faker->safeEmail,
+        'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
 });
+
+/*
+ * Subject Model Factory
+ */
+$factory->define(App\Subject::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name
+    ];
+});
+
+/*
+ * Exam Model Factory
+ */
+$factory->define(App\Exam::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'subject_id' => $faker->numberBetween(1, 10)
+    ];
+});
+

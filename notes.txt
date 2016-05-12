@@ -1,0 +1,1 @@
+use exam/php route instean of exam/id - use laravel 5.2 new features.

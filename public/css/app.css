@@ -1,10 +1,22 @@
 /*
 * Laravel Exam - main styles
 */
+/** {*/
+    /*color: #525252;*/
+/*}*/
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
 }
+
+.main-container {
+    padding: 4em 0;
+}
+
+.left-divider {
+    padding-left: 0;
+}
+.right-divider {}
 
 .off-canvas-content, .off-canvas-content {
     box-shadow: none; }
@@ -18,6 +30,10 @@ body {
 #widemenu .top-bar-left ul,
 #widemenu .top-bar-right ul{
     background-color: #fff; }
+
+.login {
+    border-right: 1px solid #e2e2e2;
+}
 
 .mobile-bar {
     background-color: #074e68;
@@ -50,7 +66,7 @@ body {
     color: #e6e6e6; text-transform: uppercase; }
 
 #widemenu ul li a {
-    color: #525252; }
+    color: #525252; line-height: 2;}
 
 #widemenu .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
     border-color: #666 transparent transparent; }
@@ -125,7 +141,7 @@ body {
 
 #student-menu li>a:hover,
 #teacher-menu li>a:hover {
-    border-left: 2px solid #074e68;
+    border-left: 3px solid #074e68;
 }
 
 #student-menu a:hover,
@@ -176,11 +192,15 @@ body {
     transition: all .25s ease-in-out;
 }
 
-.exam-list .exam-container .exam-logo {
+.subject-list .subject-container .exam-logo {
     max-width: 80%;
 }
 
-.exam-container .badge {
+.no-exam {
+    float: right;
+}
+
+.subject-container .badge {
     float: right;
 }
 
@@ -215,6 +235,26 @@ footer.main {
 
 .sub-details {
     text-align: left;
+}
+
+
+.subj-levels h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 1rem;
+}
+
+.level-choices {
+    padding: 1em 0;
+    text-align: center;
+}
+
+.choice .callout {
+    color: #074E68;
+}
+
+.choice .callout .lead {
+    font-size: 2em;
+    padding: 1em;
 }
 
 footer.main h3, footer.main h4 {

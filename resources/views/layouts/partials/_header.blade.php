@@ -7,11 +7,11 @@
     <title>Foundation | Welcome</title>
 
     <!-- styles -->
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="/css/foundation.css" />
+    <link rel="stylesheet" href="/css/app.css" />
 
     <!-- icons -->
-    <link rel="stylesheet" href="css/foundation-icons.css" />
+    <link rel="stylesheet" href="/css/foundation-icons.css" />
 
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,600,200,200italic,300italic,300,700,600italic,400italic' rel='stylesheet' type='text/css'>
@@ -97,7 +97,7 @@
             <div class="top-bar-right">
                 @if (Auth::guest())
                     <ul class="menu">
-                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li class="login"><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     </ul>
                 @else
@@ -108,4 +108,4 @@
             </div>
 
         </div>
-        <div class="off-canvas-content" data-off-canvas-content>
+        <div class="off-canvas-content main-container" data-off-canvas-content>

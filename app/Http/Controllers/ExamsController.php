@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class ExamsController extends Controller
 {
-    //
+    public function start()
+    {
+        return view('exams.start');
+    }
 }

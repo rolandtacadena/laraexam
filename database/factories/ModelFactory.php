@@ -28,7 +28,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
  */
 $factory->define(App\Subject::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name
+        'name' => $faker->text(12),
+        'description' => $faker->text(100)
     ];
 });
 
@@ -37,8 +38,21 @@ $factory->define(App\Subject::class, function (Faker\Generator $faker) {
  */
 $factory->define(App\Exam::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'subject_id' => $faker->numberBetween(1, 10)
+        'name' => $faker->text(15),
+        'description' => $faker->text(100),
+        'subject_id' => 1
+    ];
+});
+
+$factory->define(App\Question::class, function (Faker\Generator $faker) {
+    return [
+        'question' => $faker->sentence,
+        'exam_id' => $faker->numberBetween(1, 2),
+        'choice1' => $faker->word,
+        'choice2' => $faker->word,
+        'choice3' => $faker->word,
+        'choice4' => $faker->word,
+        'answer' => $faker->word
     ];
 });
 

@@ -9,6 +9,19 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logo-link {
+
+}
+
 .main-container {
     padding: 4em 0;
 }
@@ -40,7 +53,6 @@ body {
 }
 
 #widemenu li.menu-text {
-    padding: 16px;
     color: #fff;
     background-color: #074e68; }
 
@@ -62,14 +74,15 @@ body {
 #widemenu li:hover > a {
     /*color: #fff;*/
 }
-.site-logo, .site-logo-mobile {
-    color: #e6e6e6; text-transform: uppercase; }
 
 #widemenu ul li a {
     color: #525252; line-height: 2;}
 
 #widemenu .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
     border-color: #666 transparent transparent; }
+
+#site-logo a, #site-logo-mobile a {
+    color: #FFF !important; text-transform: uppercase; padding: 0 !important; }
 
 .home-hero {
     padding: 7em 0;
@@ -85,8 +98,7 @@ body {
 }
 
 .features h3 {
-    font-family: 'Source Sans Pro', sans-serif;
-    text-align: center; }
+    font-family: 'Source Sans Pro', sans-serif;  }
 
 .features img {
     display: block;
@@ -213,12 +225,32 @@ body {
     padding: 20px 0;
 }
 
+.student-exam-form fieldset {
+    padding: 1em 0;
+}
+
+.student-exam-form label {
+    margin-right: 3rem;
+    display: inline-block;
+}
+
+.student-exam-form input[type=radio],
+.student-exam-form input[type=checkbox] {
+    margiin-right: 3em;
+}
+
+.student-exam-form input[type=radio]:checked + label,
+.student-exam-form input[type=checkbox]:checked + label {
+    color: #074E68;
+    font-weight: bold;
+}
+
 .student-exam-form input {
 
 }
 
 .question-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 footer.main {
@@ -257,6 +289,68 @@ footer.main {
     padding: 1em;
 }
 
+.general-header {
+    position: relative;
+}
+
+.header-options {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #074E68;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+    z-index: 1;
+}
+
+.header-options:hover {
+    color: #fff;
+}
+
+.exam-submit, .exam-cancel {
+    background: #074E68;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+    z-index: 1;
+    border: 0;
+}
+
+.exam-submit:hover, .exam-cancel:hover {
+    color: #fff;
+}
+
+.exam-btn {
+    background: #074E68;
+}
+
+
+.size-20 {
+    font-size: 20px;
+}
+
+.fi-x {
+    color: #ed7c7c;
+}
+
+.fi-check {
+    color: #63aa63;
+}
+
+.subject-chunk-divider, .exam-chunk-divider {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.subject-block, .exam-block {
+    border-right: 1px solid #e2e2e2;
+}
+
+.subject-block:last-child, .exam-block:last-child {
+    border-right: none;
+}
+
+
 footer.main h3, footer.main h4 {
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -264,5 +358,13 @@ footer.main h3, footer.main h4 {
 footer.main a {
     font-family: 'Source Sans Pro', sans-serif;
     color: #fff; }
+
+
+/* Media Queries */
+@media (max-width: 639px) {
+    .exam-chunk-divider, .exam-block {
+        border: none;
+    }
+}
 
 

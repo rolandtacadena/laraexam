@@ -18,4 +18,14 @@ class Subject extends Model
         'name', 'description', 'photo'
     ];
 
+    /**
+     * Returns all exams for the subject
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function exams()
+    {
+        return $this->hasMany(Exam::class);
+    }
+
 }

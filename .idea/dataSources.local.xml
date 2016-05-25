@@ -7,5 +7,11 @@
       <schema-pattern>laravelexam2.*</schema-pattern>
       <default-schemas>laravelexam2.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - laravelexam2@localhost [2]" uuid="e8d8f912-1836-4f01-b528-8c2a1b9b3f05">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>laravelexam2.*</schema-pattern>
+      <default-schemas>laravelexam2.*</default-schemas>
+    </data-source>
   </component>
 </project>

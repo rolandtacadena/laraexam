@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exam;
 use App\Subject;
 use Illuminate\Http\Request;
 
@@ -9,8 +10,17 @@ use App\Http\Requests;
 
 class SubjectsController extends Controller
 {
-    public function level(Subject $subject)
+
+    /**
+     * Get all the exams for the given subject.
+     *
+     * @param Subject $subject
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function exams(Subject $subject)
     {
-        return view('subjects.level', compact('subject'));
+        $exams = $subject->exams;
+
+        return view('subjects.subject-exams', compact('subject','exams'));
     }
 }

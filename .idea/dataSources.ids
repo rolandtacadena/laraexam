@@ -50,4 +50,107 @@
       <index name="users_email_unique" unique="true" columns="email"/>
     </table>
   </data-source>
+  <data-source name="MySQL - laravelexam2@localhost [2]" uuid="e8d8f912-1836-4f01-b528-8c2a1b9b3f05">
+    <database-info product="MySQL" version="5.6.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="laravelexam2"/>
+    <table name="exam_user" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="exam_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="exam_user_exam_id_foreign" columns="exam_id" ref-table="exams" ref-schema="" ref-catalog="laravelexam2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="exam_user_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="laravelexam2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="exam_user_exam_id_foreign" unique="false" columns="exam_id"/>
+      <index name="exam_user_user_id_foreign" unique="false" columns="user_id"/>
+    </table>
+    <table name="exams" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="subject_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="exams_subject_id_foreign" columns="subject_id" ref-table="subjects" ref-schema="" ref-catalog="laravelexam2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="exam_user_exam_id_foreign" table="exam_user" schema="" catalog="laravelexam2" columns="exam_id"/>
+      <exported-key name="questions_exam_id_foreign" table="questions" schema="" catalog="laravelexam2" columns="exam_id"/>
+      <exported-key name="results_exam_id_foreign" table="results" schema="" catalog="laravelexam2" columns="exam_id"/>
+      <index name="exams_subject_id_foreign" unique="false" columns="subject_id"/>
+    </table>
+    <table name="migrations" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="migration" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="password_resets" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <index name="password_resets_email_index" unique="false" columns="email"/>
+      <index name="password_resets_token_index" unique="false" columns="token"/>
+    </table>
+    <table name="questions" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="question" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="exam_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="choice1" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="choice2" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="choice3" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="choice4" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="answer" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="questions_exam_id_foreign" columns="exam_id" ref-table="exams" ref-schema="" ref-catalog="laravelexam2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="results_question_id_foreign" table="results" schema="" catalog="laravelexam2" columns="question_id"/>
+      <index name="questions_exam_id_foreign" unique="false" columns="exam_id"/>
+    </table>
+    <table name="results" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="exam_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="question_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_answer" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="correct_answer" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="remarks" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="results_exam_id_foreign" columns="exam_id" ref-table="exams" ref-schema="" ref-catalog="laravelexam2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="results_question_id_foreign" columns="question_id" ref-table="questions" ref-schema="" ref-catalog="laravelexam2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="results_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="laravelexam2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="results_exam_id_foreign" unique="false" columns="exam_id"/>
+      <index name="results_question_id_foreign" unique="false" columns="question_id"/>
+      <index name="results_user_id_foreign" unique="false" columns="user_id"/>
+    </table>
+    <table name="subjects" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="photo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="exams_subject_id_foreign" table="exams" schema="" catalog="laravelexam2" columns="subject_id"/>
+    </table>
+    <table name="users" schema="" catalog="laravelexam2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="exam_user_user_id_foreign" table="exam_user" schema="" catalog="laravelexam2" columns="user_id"/>
+      <exported-key name="results_user_id_foreign" table="results" schema="" catalog="laravelexam2" columns="user_id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+    </table>
+  </data-source>
 </component>

@@ -2,109 +2,67 @@
 
 @section('content')
 
-    <div class="row expanded student-exam-form">
+    <div class="general-header row">
+        <h4><b>{{ $exam->name }}</b></h4>
+    </div>
+    <hr/>
+    <div class="row student-exam-form">
 
-        <div class="row">
-            <fieldset class="large-12 columns">
-                <legend class="question-title">What is the most foundation of laravel?</legend>
-                <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">Red</label>
-                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
-                <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
-                <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <legend class="question-title">Check these out</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-            </fieldset>
-            <hr/>
-            <fieldset class="large-12 columns">
-                <input type="submit" class="button" value="Submit My Answers"/>
-            </fieldset>
-        </div>
+        @if(count($questions) > 0)
 
+        <form method="POST" action="{{ route('exam-process') }}">
+            {{ csrf_field() }}
+            <input type="hidden" name="exam" value="{{ $exam->id }}"/>
+
+            @foreach($questions as $question)
+
+                <fieldset class="large-12 columns">
+                    <legend class="question-title">{{ $question->question }}</legend>
+
+                    <input type="radio"
+                           name="question[{{ $question->id }}]"
+                           value="{{ $question->choice1 }}"
+                           id="choice1-{{ $question->choice1 }}"
+                           required checked>
+                    <label for="choice1-{{ $question->choice1 }}">{{ ucfirst($question->choice1) }}</label>
+
+                    <input type="radio"
+                           name="question[{{ $question->id }}]"
+                           value="{{ $question->choice2 }}"
+                           id="choice2-{{ $question->choice2 }}"
+                           required>
+                    <label for="choice2-{{ $question->choice2 }}">{{ ucfirst($question->choice2) }}</label>
+
+                    <input type="radio"
+                           name="question[{{ $question->id }}]"
+                           value="{{ $question->choice3 }}"
+                           id="choice3-{{ $question->choice3 }}"
+                           required>
+                    <label for="choice3-{{ $question->choice3 }}">{{ ucfirst($question->choice3) }}</label>
+
+                    <input type="radio"
+                           name="question[{{ $question->id }}]"
+                           value="{{ $question->choice4 }}"
+                           id="choice4-{{ $question->choice4 }}"
+                           required>
+                    <label for="choice4-{{ $question->choice4 }}">{{ ucfirst($question->choice4) }}</label>
+
+                </fieldset>
+                <hr/>
+
+            @endforeach
+
+            <fieldset class="large-12 columns">
+                <input type="submit" class="exam-submit" value="Submit My Answers"/>
+                <a href="" class="exam-cancel" value="Cancel"/>Cancel</a>
+            </fieldset>
+        </form>
+
+        @else
+
+            <p>No questions available</p>
+
+        @endif
     </div>
 
 @endsection

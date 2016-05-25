@@ -12,6 +12,6 @@ class SubjectTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Subject::class, 10)->create();
+        factory(Subject::class, 12)->create();
     }
 }

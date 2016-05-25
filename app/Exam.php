@@ -16,7 +16,49 @@ class Exam extends Model
      */
     protected $fillable = [
         'name',
+        'description',
         'subject_id',
     ];
+
+    /*
+     * Name attribute accessor
+     */
+    public function getNameAttribute($value)
+    {
+        return ucwords($value);
+    }
+
+    /*
+     * Name attribute mutator
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
+    /**
+     * Returns the subject where the exam belongs to
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
+    /**
+     * Returns the list of questions for this exam
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    public function examinees()
+    {
+        return $this->belongsToMany(User::class);
+    }
 
 }

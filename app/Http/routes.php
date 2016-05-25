@@ -13,16 +13,28 @@
 
 Route::auth();
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'PagesController@index')
+    ->name('index');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('subject-level/{subject}', 'SubjectsController@level')
-        ->name('subject-level');
 
-    Route::get('exam/{exam}/{level}', 'ExamsController@start')
-        ->name('user-exam-page');
+    Route::get('subject-exams/{subject}', 'SubjectsController@exams')
+        ->name('subject-exams');
+
+    Route::get('exam/{exam}', 'ExamsController@show')
+        ->name('exam-details');
+
+    Route::get('exam/{exam}/start', 'ExamsController@start')
+        ->name('exam-start');
+
+    Route::post('exam-process', 'ExamsController@process')
+        ->name('exam-process');
+
+    Route::get('exam-results', 'ExamsController@all_results');
+
+    Route::get('exam-result/exam-{exam}/user-{user}', 'ExamsController@result')
+        ->name('exam-result');
+
 });
 
 

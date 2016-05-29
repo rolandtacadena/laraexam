@@ -5,9 +5,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
+
     <!-- styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/foundation.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/sweetalert.css') }}" />
+
+
     <!-- icons -->
     <link rel="stylesheet" href="{{ URL::asset('foundation-icons/foundation-icons.css') }}" />
     <!-- fonts -->

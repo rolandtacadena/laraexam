@@ -51,6 +51,8 @@
 <script src="{{ URL::asset('js/vendor/jquery.js') }}"></script>
 <script src="{{ URL::asset('js/vendor/what-input.js') }}"></script>
 <script src="{{ URL::asset('js/vendor/foundation.min.js') }}"></script>
+<script src="{{ URL::asset('js/vendor/sweetalert.min.js') }}"></script>
 <script src="{{ URL::asset('js/app.js') }}"></script>
+@include('flash')
 </body>
 </html>

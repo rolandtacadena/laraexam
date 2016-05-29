@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @if(count($exams) > 0)
+    @if(count($subject->exams) > 0)
 
         <div class="general-header row column">
             <h4>Select exams available for <b>{{ $subject->name }}.</b></h4>
@@ -10,10 +10,13 @@
         <hr style="margin-bottom: 0;" />
         <div class="row exam-list" data-equalizer data-equalize-on="small" id="test-eq">
 
-            @foreach($exams->chunk(4) as $set)
+            <!-- loop on subject's exam and take 4 -->
+            @foreach($subject->exams->chunk(4) as $set)
 
                 <div class="exam-chunk-divider clearfix">
 
+                    <!-- loop again on the 4 taken exams from above loop -->
+                    <!-- so that we can enclose this 4 exams in another div for layout purposes -->
                     @foreach($set as $exam)
 
                         <div class="exam-block medium-6 large-3 columns text-center" data-equalizer-watch>
@@ -34,6 +37,7 @@
             @endforeach
 
         </div>
+
     @else
 
     <div class="row column no-exam-available">

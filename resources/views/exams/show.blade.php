@@ -4,21 +4,8 @@
 
     <div class="row">
         <div class="medium-7 columns">
+            <!-- temporary exam image -->
             <img class="thumbnail" src="http://placehold.it/650x350">
-            {{--<div class="row small-up-4">--}}
-                {{--<div class="column">--}}
-                    {{--<img class="thumbnail" src="http://placehold.it/250x200">--}}
-                {{--</div>--}}
-                {{--<div class="column">--}}
-                    {{--<img class="thumbnail" src="http://placehold.it/250x200">--}}
-                {{--</div>--}}
-                {{--<div class="column">--}}
-                    {{--<img class="thumbnail" src="http://placehold.it/250x200">--}}
-                {{--</div>--}}
-                {{--<div class="column">--}}
-                    {{--<img class="thumbnail" src="http://placehold.it/250x200">--}}
-                {{--</div>--}}
-            {{--</div>--}}
         </div>
         <div class="medium-5 large-5 columns">
             <h3><b>{{ $exam->name }}</b></h3>
@@ -36,11 +23,8 @@
                 </div>
                 <div class="medium-6 columns">
                     <a href="{{ route('subject-exams', $exam->subject->id) }}" class="exam-btn button medium secondary expanded">Cancel</a>
-
                 </div>
-
             </div>
-
         </div>
     </div>
 

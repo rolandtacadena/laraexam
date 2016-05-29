@@ -27,6 +27,11 @@ class CreateExamUsersTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
+            $table->boolean('completed')->default(false);
+
+            $table->integer('num_correct');
+            $table->integer('num_wrong');
+
             $table->timestamps();
         });
     }

@@ -2,9 +2,14 @@
 
 @section('content')
 
-    <div class="general-header row">
+    <div class="row general-header">
         <h4>Exam Summary Results for exam <b>{{ $exam->name }}</b></h4>
-        <a href="{{ route('index') }}" class="header-options">Take Another Exam</a>
+        <ul class="header-options menu icon-top">
+            <li><a href="#"><i class="fi-list"></i> <span>One</span></a></li>
+            <li><a href="#"><i class="fi-list"></i> <span>Two</span></a></li>
+            <li><a href="#"><i class="fi-list"></i> <span>Three</span></a></li>
+            <li><a href="#"><i class="fi-list"></i> <span>Four</span></a></li>
+        </ul>
     </div>
     <hr/>
     <div class="row exam-results">
@@ -20,27 +25,25 @@
             </thead>
             <tbody>
 
-                @foreach($results as $result)
+                @foreach($examSummary as $summary)
 
                     <tr>
-                        <td>{{ $result->id }}</td>
-                        <td>{{ $result->question }}</td>
-                        <td>{{ $result->user_answer }}r</td>
-                        <td>{{ $result->correct_answer }}</td>
+                        <td>{{ $summary->id }}</td>
+                        <td>{{ $summary->question }}</td>
+                        <td>{{ $summary->user_answer }}</td>
+                        <td>{{ $summary->correct_answer }}</td>
                         <td class="text-center">
-                            {!! $result->remarks == 0 ?
+                            {!! $summary->remarks == 0 ?
                             '<i class="step fi-x size-20"></i>' :
                             '<i class="step fi-check size-20"></i>' !!}
                         </td>
                     </tr>
+
                 @endforeach
 
             </tbody>
         </table>
-
         <hr/>
-
-
     </div>
 
 @endsection

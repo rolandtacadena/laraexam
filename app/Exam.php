@@ -56,9 +56,10 @@ class Exam extends Model
         return $this->hasMany(Question::class);
     }
 
-    public function examinees()
+    public function takers()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)
+            ->withPivot('completed', 'num_correct', 'num_wrong');
     }
 
 }

@@ -19,8 +19,6 @@ class SubjectsController extends Controller
      */
     public function exams(Subject $subject)
     {
-        $exams = $subject->exams;
-
-        return view('subjects.subject-exams', compact('subject','exams'));
+        return view('subjects.subject-exams', compact('subject'));
     }
 }

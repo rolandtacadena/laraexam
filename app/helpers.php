@@ -1,5 +1,13 @@
 <?php
 
+
+/**
+ * General function that flashes message to the session
+ *
+ * @param null $title
+ * @param null $message
+ * @return \Illuminate\Foundation\Application|mixed
+ */
 function flash($title = null, $message = null)
 {
     $flash = app('App\Http\Flash');

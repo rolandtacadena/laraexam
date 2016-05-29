@@ -56,6 +56,11 @@ class Exam extends Model
         return $this->hasMany(Question::class);
     }
 
+    /**
+     * Exam has many takers
+     *
+     * @return $this
+     */
     public function takers()
     {
         return $this->belongsToMany(User::class)

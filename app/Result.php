@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Result extends Model
 {
+
+    /*
+     * Fillable fields for results table
+     */
     protected $fillable = [
         'user_id',
         'exam_id',

@@ -15,6 +15,9 @@ class Controller extends BaseController
 
     protected $user;
 
+    /**
+     * Set $user variable as current authenticated user in every controller
+     */
     public function __construct()
     {
         $this->user = Auth::user();

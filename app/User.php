@@ -24,6 +24,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * User can take many exams
+     *
+     * @return $this
+     */
     public function exams()
     {
         return $this->belongsToMany(Exam::class)

@@ -48,6 +48,7 @@
             <p>No Subjects available yet.</p>
 
         @endif
+        
     </div>
 
 @endsection

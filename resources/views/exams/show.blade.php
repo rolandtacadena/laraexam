@@ -5,7 +5,7 @@
     <div class="row">
         <div class="medium-7 columns">
             <!-- temporary exam image -->
-            <img class="thumbnail" src="http://placehold.it/650x350">
+            <img class="thumbnail" src="{{ URL::asset('img/home-bg-01.svg') }}">
         </div>
         <div class="medium-5 large-5 columns">
             <h3><b>{{ $exam->name }}</b></h3>

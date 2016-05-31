@@ -15,13 +15,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        // boolean var checks if user is logged in
-        view()->share('signedIn', Auth::check());
-
-        // variable that holds logged in user
-        view()->share('user', Auth::user());
-
         // composer index page with all subjects
         $this->composeSubjectsInIndex();
     }

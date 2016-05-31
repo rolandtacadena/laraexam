@@ -5,7 +5,7 @@
     @if(count($subject->exams) > 0)
 
         <div class="general-header row column">
-            <h4>Select exams available for <b>{{ $subject->name }}.</b></h4>
+            <h3 class="title-block">Select exams available for <b>{{ $subject->name }}.</b></h3>
         </div>
         <hr style="margin-bottom: 0;" />
         <div class="row exam-list" data-equalizer data-equalize-on="small" id="test-eq">

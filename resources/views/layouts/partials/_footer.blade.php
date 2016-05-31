@@ -48,11 +48,15 @@
             </div>
         </div>
     </div>
+
+<!-- footer scripts -->
 <script src="{{ URL::asset('js/vendor/jquery.js') }}"></script>
 <script src="{{ URL::asset('js/vendor/what-input.js') }}"></script>
 <script src="{{ URL::asset('js/vendor/foundation.min.js') }}"></script>
 <script src="{{ URL::asset('js/vendor/sweetalert.min.js') }}"></script>
 <script src="{{ URL::asset('js/app.js') }}"></script>
+
+<!-- sweet alert flash -->
 @include('flash')
 </body>
 </html>

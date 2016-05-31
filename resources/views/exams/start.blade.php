@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="general-header row">
-        <h4><b>{{ $exam->name }}</b></h4>
+        <h3>Questions for exam <b><u>{{ $exam->name }}</u></b></h3>
     </div>
     <hr/>
     <div class="row student-exam-form">

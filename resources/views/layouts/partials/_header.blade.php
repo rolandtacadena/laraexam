@@ -8,15 +8,16 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/foundation.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/sweetalert.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
 
 
     <!-- icons -->
     <link rel="stylesheet" href="{{ URL::asset('foundation-icons/foundation-icons.css') }}" />
-    <!-- fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,600,200,200italic,300italic,300,700,600italic,400italic' rel='stylesheet' type='text/css'>
 
+    <!-- fonts -->
+    {{--<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,600,200,200italic,300italic,300,700,600italic,400italic' rel='stylesheet' type='text/css'>--}}
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic,900,900italic,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="off-canvas-wrapper">
@@ -92,7 +93,7 @@
 
                     @if ($signedIn)
 
-                        <li class="has-submenu">
+                        <li class="has-submenu user-holder">
                             <a href="#">{{ $user->name }}</a>
                             <ul class="menu submenu vertical" data-submenu>
                                 <li><a href="left_wide_11">Settings</a></li>

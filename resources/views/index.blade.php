@@ -11,7 +11,7 @@
                 </div>
             </div>
         </header>
-        <h3>List of Subjects</h3>
+        <h3 class="title-block"><i class="step fi-list-thumbnails"></i>List of Subjects</h3>
         <hr style="margin-bottom: 0;"/>
 
         @if(count($subjects) > 0)
@@ -24,12 +24,16 @@
 
                         @foreach($set as $subject)
 
-                            <div class="subject-block medium-3 large-3 columns text-center">
+                            <div class="subject-block medium-6 large-3 columns text-center">
+
                                 <!-- this subject photo is temporary -->
                                 <img src="img/code.svg">
+
                                 <h3 class="feature-block-header">{{ $subject->name }}</h3>
+
                                 <p>{{ $subject->description }}</p>
-                                <a class="button large exam-btn"
+
+                                <a class="button medium exam-btn"
                                    href="{{ route('subject-exams', $subject->id) }}">View subject
                                     <i class="step fi-arrow-right size-20"></i>
                                 </a>
@@ -48,7 +52,7 @@
             <p>No Subjects available yet.</p>
 
         @endif
-        
+
     </div>
 
 @endsection

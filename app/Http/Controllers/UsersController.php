@@ -11,9 +11,7 @@ class UsersController extends Controller
 {
     public function profile(User $user)
     {
-        return $user->id;
-//        return view('users.profile');
-
+        return view('users.profile');
     }
 
     public function exam_history()

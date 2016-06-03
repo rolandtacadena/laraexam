@@ -47,7 +47,7 @@ $factory->define(App\Exam::class, function (Faker\Generator $faker) {
 $factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'question' => $faker->sentence,
-        'exam_id' => $faker->numberBetween(1, 2),
+        'exam_id' => $faker->numberBetween(1, 5),
         'choice1' => $faker->word,
         'choice2' => $faker->word,
         'choice3' => $faker->word,

@@ -7,7 +7,6 @@
                 <a href="#">{{ $user->name }}</a>
                 <ul class="menu submenu vertical" data-submenu>
                     <li><a href="{{ route('user-profile', $user->id) }}">Profile</a></li>
-                    <li><a href="{{ route('exam-history', $user->id) }}">Exam History</a></li>
                 </ul>
             </li>
             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>

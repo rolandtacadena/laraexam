@@ -39,9 +39,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('user/{user}/profile', 'UsersController@profile')->name('user-profile');
 
-    Route::get('user/{user}/exam-hostory', 'UsersController@exam_history')
-        ->name('exam-history');
-
 });
 
 

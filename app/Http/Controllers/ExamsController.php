@@ -122,10 +122,10 @@ class ExamsController extends Controller
         $examSummary = Result::whereUserId($user->id)
             ->whereExamId($exam->id)->get();
 
-        flash()->overlay(
+        /*flash()->overlay(
             "Congrats! You have finished the exam " . $exam->name,
             "Please view the detailed report of your answers."
-        );
+        );*/
 
         return view('exams.result', compact('examSummary', 'exam', 'examResult'));
 

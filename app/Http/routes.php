@@ -32,7 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('exam-process', 'ExamsController@process')
         ->name('exam-process');
 
-    Route::get('exam-results', 'ExamsController@all_results');
+    Route::get('exam-results', 'ExamsController@all_results')
+        ->name('exam_results');
 
     Route::get('exam-result/exam-{exam}/user-{user}', 'ExamsController@result')
         ->name('exam-result');

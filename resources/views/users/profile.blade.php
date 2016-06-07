@@ -19,8 +19,9 @@
                             @foreach($set as $userExam)
                                 <div class="medium-3 large-3 columns">
                                     <img src="{{ URL::asset('img/exam2.svg') }}">
-                                    <h3 class="feature-block-header">Semantic</h3>
-                                    <p>Everything is semantic. You can have the cleanest markup without sacrificing the utility and speed of Foundation.</p>
+                                    <h3 class="feature-block-header">{{ $userExam->name }}</h3>
+                                    <p>{{ $userExam->created_at->diffForHumans()}}</p>
+                                    <a href="{{ route('exam-result', [$userExam->id, $user->id]) }}" class="button exam-btn">View Result</a>
                                 </div>
                             @endforeach
                         </div>

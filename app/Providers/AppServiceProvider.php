@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Subject;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,8 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // composer index page with all subjects
-        $this->composeSubjectsInIndex();
+        //
     }
 
     /**
@@ -27,12 +24,5 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-    }
-
-    public function composeSubjectsInIndex()
-    {
-        view()->composer(['index'], function ($view) {
-            $view->with('subjects', Subject::all());
-        });
     }
 }

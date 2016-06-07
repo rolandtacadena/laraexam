@@ -22,9 +22,5 @@ class Controller extends BaseController
     {
         $this->user = Auth::user();
 
-        view()->share('signedIn', Auth::check());
-
-        // variable that holds logged in user
-        view()->share('user', $this->user);
     }
 }

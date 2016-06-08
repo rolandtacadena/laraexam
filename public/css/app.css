@@ -255,14 +255,6 @@ h6 {
     font-size: 1.4rem;
 }
 
-footer.main {
-    font-family: 'Lato', sans-serif;
-    padding: 20px 0;
-    color: #fff;
-    background: #074e68;
-    font-weight: 400;
-}
-
 .subj-exam {
     text-align: left;
 }
@@ -355,15 +347,36 @@ footer.main {
 .subject-block p,
 .exam-block p { color: rgb(63, 52, 52); }
 
-
-footer.main h3, footer.main h4 {
+footer.main {
     font-family: 'Lato', sans-serif;
+    padding: 20px 0;
+    color: #fff;
+    background: #141718;
+    font-weight: 400;
+    border-top: 5px solid #074e68;
 }
 
 footer.main a {
     font-family: 'Lato', sans-serif;
-    color: #fff; }
+    color: #ddd1d1; }
 
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+    color: #ddd1d1;
+    font-weight: 300;
+}
+
+footer .stay-connected {
+    background: #074E68;
+}
+
+footer p {
+    font-weight: 100;
+}
 
 .button { border-radius: 3px; }
 .button:hover {
@@ -373,7 +386,6 @@ footer.main a {
 
 /*Sweet Alert override*/
 .sweet-alert h2 { font-size: 25px; }
-
 
 /* Media Queries */
 @media (max-width: 639px) {

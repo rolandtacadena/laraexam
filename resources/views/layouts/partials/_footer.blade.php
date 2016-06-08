@@ -37,7 +37,7 @@
                                         <div class="connect-links">
                                             <h4 class="hide-for-small">Stay Updated</h4>
                                             <p>Keep up with the latest on LaraExam. Find us on <a href="https://github.com/zurb/foundation">Github</a>.</p>
-                                            <a href="learn/foundation-insider.html" class="small button">Stay Connected</a>
+                                            <a href="learn/foundation-insider.html" class="small button stay-connected">Stay Connected</a>
                                         </div>
                                     </div>
                                 </div>

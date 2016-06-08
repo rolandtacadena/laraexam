@@ -40,9 +40,9 @@
 
     @else
 
-    <div class="row column no-exam-available">
-        <h4>Sorry no exam available for <b>{{ $subject->name }}.</b></h4>
-    </div>
+        <div class="row column no-exam-available">
+            <h4>Sorry no exam available for <b>{{ $subject->name }}.</b></h4>
+        </div>
 
     @endif
 

@@ -40,14 +40,14 @@ $factory->define(App\Exam::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->text(15),
         'description' => $faker->text(100),
-        'subject_id' => 1
+        'subject_id' => $faker->numberBetween(1, 8)
     ];
 });
 
 $factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'question' => $faker->sentence,
-        'exam_id' => $faker->numberBetween(1, 5),
+        'exam_id' => $faker->numberBetween(1, 32),
         'choice1' => $faker->word,
         'choice2' => $faker->word,
         'choice3' => $faker->word,

@@ -27,10 +27,6 @@ class ExamsController extends Controller
     public function show(Exam $exam)
     {
 
-        flash()->overlay(
-            'Please be informed',
-            'By clicking START you will be assgined to the exam and you are forced to finish it, unless you did not finish, it will be marked as incomplete.');
-
         return view('exams.show', compact('exam'));
 
     }
@@ -121,11 +117,6 @@ class ExamsController extends Controller
 
         $examSummary = Result::whereUserId($user->id)
             ->whereExamId($exam->id)->get();
-
-        /*flash()->overlay(
-            "Congrats! You have finished the exam " . $exam->name,
-            "Please view the detailed report of your answers."
-        );*/
 
         return view('exams.result', compact('examSummary', 'exam', 'examResult'));
 

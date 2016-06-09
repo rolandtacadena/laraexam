@@ -12,6 +12,6 @@ class QuestionTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Question::class, 100)->create();
+        factory(Question::class, 1000)->create();
     }
 }

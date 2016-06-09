@@ -35,7 +35,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function composeSubjectsInIndex()
     {
         view()->composer(['index'], function ($view) {
-            $view->with('subjects', Subject::all());
+            $view->with('subjects', Subject::has('exams')->get());
         });
     }
 

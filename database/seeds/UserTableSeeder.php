@@ -21,7 +21,5 @@ class UserTableSeeder extends Seeder
         $user->password = bcrypt('090412');
         $user->save();
 
-        Auth::login($user);
-
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exam;
 use App\Question;
 use App\Result;
+use App\Subject;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -18,21 +19,26 @@ class ExamsController extends Controller
         parent::__construct();
     }
 
-    /**
-     * Show exam
-     *
-     * @param Exam $exam
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function show(Exam $exam)
-    {
 
+    /**
+     * Show exam details.
+     *
+     * @param Subject $subject
+     * @param Exam $exam
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function show(Subject $subject, Exam $exam)
+    {
+        if(!$exam->questionCount() > 0) {
+            flash()->info('Sorry', 'That exam has no questions yet. Plese select another.');
+            return redirect()->route('subject-exams', $subject->id);
+        }
         return view('exams.show', compact('exam'));
 
     }
 
     /**
-     * Load exam questions with the given exam id
+     * Load exam questions with the given exam id.
      *
      * @param Exam $exam
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -46,7 +52,7 @@ class ExamsController extends Controller
     }
 
     /**
-     * Process the question submitted by the examinee
+     * Process the question submitted by the examinee.
      *
      * @param Request $request
      * @return mixed
@@ -88,6 +94,8 @@ class ExamsController extends Controller
             'num_wrong' => $wrong
         ]);
 
+        flash()->overlay('Congrats!', 'You made it to exam. Please check summary of your answers.');
+
         return redirect()->action('ExamsController@result', [
             'exam' => $exam,
             'user' => $this->user
@@ -96,7 +104,7 @@ class ExamsController extends Controller
     }
 
     /**
-     * List all exam history resultss
+     * List all exam history results.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -106,7 +114,7 @@ class ExamsController extends Controller
     }
 
     /**
-     * Return exam results from givem exam id and user id
+     * Return exam results from givem exam id and user id.
      *
      * @param $exam
      * @param $user

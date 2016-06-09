@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Exam extends Model
 {
     /*
-     * table used for this model
+     * Table used for this model.
      */
     protected $table = 'exams';
 
     /*
-     * attributes that are mass assignable
+     * Attributes that are mass assignable.
      */
     protected $fillable = [
         'name',
@@ -21,7 +21,7 @@ class Exam extends Model
     ];
 
     /*
-     * Name attribute accessor
+     * Name attribute accessor.
      */
     public function getNameAttribute($value)
     {
@@ -29,7 +29,7 @@ class Exam extends Model
     }
 
     /*
-     * Name attribute mutator
+     * Name attribute mutator.
      */
     public function setNameAttribute($value)
     {
@@ -37,7 +37,7 @@ class Exam extends Model
     }
 
     /**
-     * Returns the subject where the exam belongs to
+     * Returns the subject where the exam belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -47,7 +47,7 @@ class Exam extends Model
     }
 
     /**
-     * Returns the list of questions for this exam
+     * Returns the list of questions for this exam.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -57,7 +57,7 @@ class Exam extends Model
     }
 
     /**
-     * Exam has many takers
+     * Exam has many takers.
      *
      * @return $this
      */
@@ -65,6 +65,16 @@ class Exam extends Model
     {
         return $this->belongsToMany(User::class)
             ->withPivot('completed', 'num_correct', 'num_wrong');
+    }
+
+    /**
+     * Count exam questions.
+     *
+     * @return mixed
+     */
+    public function questionCount()
+    {
+        return $this->questions()->count();
     }
 
 }

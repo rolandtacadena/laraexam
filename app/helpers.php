@@ -2,7 +2,7 @@
 
 
 /**
- * General function that flashes message to the session
+ * General function that flashes message to the session.
  *
  * @param null $title
  * @param null $message

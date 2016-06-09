@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     /*
-     * table used for this model
+     * Table used for this model.
      */
     protected $table = 'questions';
 
     /*
-     * attributes that are mass assignable
+     * Attributes that are mass assignable.
      */
     protected $fillable = [
         'question',
@@ -25,7 +25,7 @@ class Question extends Model
     ];
 
     /**
-     * Returns the exam to which this question belongs
+     * Returns the exam to which this question belongs.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

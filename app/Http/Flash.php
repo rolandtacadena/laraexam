@@ -14,7 +14,7 @@ class Flash {
     }
 
     /**
-     * Flash information message
+     * Flash information message.
      *
      * @param $title
      * @param $message
@@ -26,7 +26,7 @@ class Flash {
     }
 
     /**
-     * Flash success message
+     * Flash success message.
      *
      * @param $title
      * @param $message
@@ -38,7 +38,7 @@ class Flash {
     }
 
     /**
-     * Flash error message
+     * Flash error message.
      *
      * @param $title
      * @param $message
@@ -50,7 +50,7 @@ class Flash {
     }
 
     /**
-     * Overlay flash message
+     * Overlay flash message.
      *
      * @param $title
      * @param $message

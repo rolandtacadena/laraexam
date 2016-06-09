@@ -20,10 +20,10 @@ Route::get('/', 'PagesController@index')
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('subject-exams/{subject}', 'SubjectsController@exams')
+    Route::get('subject-exams/subject-{subject}', 'SubjectsController@exams')
         ->name('subject-exams');
 
-    Route::get('exam/{exam}', 'ExamsController@show')
+    Route::get('subject-exams/subject-{subject}/exam-{exam}', 'ExamsController@show')
         ->name('exam-details');
 
     Route::get('exam/{exam}/start', 'ExamsController@start')

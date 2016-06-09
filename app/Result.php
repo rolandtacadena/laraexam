@@ -8,7 +8,7 @@ class Result extends Model
 {
 
     /*
-     * Fillable fields for results table
+     * Fillable fields for results table.
      */
     protected $fillable = [
         'user_id',

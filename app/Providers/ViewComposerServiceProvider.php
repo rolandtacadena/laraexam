@@ -30,7 +30,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     }
 
     /**
-     * Return all subjects in index view
+     * Return all subjects in index view.
      */
     public function composeSubjectsInIndex()
     {
@@ -40,7 +40,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     }
 
     /**
-     * make 'signedIn' and 'user' globally accessible in every views
+     * make 'signedIn' and 'user' globally accessible in every views.
      */
     public function composeUserOnEveryView()
     {

@@ -25,7 +25,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * User can take many exams
+     * User can take many exams.
      *
      * @return $this
      */

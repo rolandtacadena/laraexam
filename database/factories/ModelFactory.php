@@ -12,7 +12,7 @@
 */
 
 /*
- * User Model Factory
+ * User Model Factory.
  */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 /*
- * Subject Model Factory
+ * Subject Model Factory.
  */
 $factory->define(App\Subject::class, function (Faker\Generator $faker) {
     return [
@@ -34,7 +34,7 @@ $factory->define(App\Subject::class, function (Faker\Generator $faker) {
 });
 
 /*
- * Exam Model Factory
+ * Exam Model Factory.
  */
 $factory->define(App\Exam::class, function (Faker\Generator $faker) {
     return [
@@ -44,6 +44,9 @@ $factory->define(App\Exam::class, function (Faker\Generator $faker) {
     ];
 });
 
+/*
+ * Question Model Factory.
+ */
 $factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'question' => $faker->sentence,

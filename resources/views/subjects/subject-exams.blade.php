@@ -25,7 +25,7 @@
                             <h3 class="exam-name">{{ $exam->name }}</h3>
                             <p class="exam-desc">{{ $exam->description }}</p>
                             <a class="button exam-btn"
-                               href="{{ route('exam-details', $exam->id) }}">View this exam
+                               href="{{ route('exam-details', [$subject->id, $exam->id]) }}">View this exam
                                 <i class="step fi-arrow-right size-20"></i>
                             </a>
                         </div>

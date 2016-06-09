@@ -9,6 +9,12 @@ use App\Http\Requests;
 
 class UsersController extends Controller
 {
+    /**
+     * Show user profile.
+     *
+     * @param User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function profile(User $user)
     {
         return view('users.profile');

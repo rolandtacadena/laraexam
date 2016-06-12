@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="small-12 medium-3 columns">
+        <div class="small-12 medium-5 large-3 columns">
             <img class="thumbnail" src="http://placehold.it/650x350">
             <h5>{{ $user->name }}</h5>
             <hr/>
@@ -13,7 +13,7 @@
                 </p>
             </div>
         </div>
-        <div class="small-12 medium-9 columns">
+        <div class="small-12 medium-7 large-9 columns">
             <div class="user-exam-history">
                 <h4>Your Exam History</h4>
                 <hr/>
@@ -21,7 +21,7 @@
                     @foreach($user->exams->chunk(3) as $set)
                         <div>
                             @foreach($set as $userExam)
-                                <div class="medium-3 large-3 columns">
+                                <div class="small-12 medium-6 large-3 columns text-center">
                                     <img src="{{ URL::asset('img/exam2.svg') }}">
                                     <h5 class="feature-block-header">{{ $userExam->name }}</h5>
                                     <p>Subject: <b><a href="{{ route('subject-exams', $userExam->subject->id) }}">{{ $userExam->subject->name }}</a></b></p>

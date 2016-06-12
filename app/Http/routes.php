@@ -38,7 +38,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('exam-result/exam-{exam}/user-{user}', 'ExamsController@result')
         ->name('exam-result');
 
-    Route::get('user/{user}/profile', 'UsersController@profile')->name('user-profile');
+    Route::get('user/{user}/profile', 'UsersController@profile')
+        ->name('user-profile');
 
 });
 

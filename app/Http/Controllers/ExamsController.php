@@ -30,7 +30,7 @@ class ExamsController extends Controller
     public function show(Subject $subject, Exam $exam)
     {
         if(!$exam->questionCount() > 0) {
-            flash()->info('Sorry', 'That exam has no questions yet. Plese select another.');
+            flash()->error('Sorry', 'That exam has no questions yet. Plese select another.');
             return redirect()->route('subject-exams', $subject->id);
         }
         return view('exams.show', compact('exam'));

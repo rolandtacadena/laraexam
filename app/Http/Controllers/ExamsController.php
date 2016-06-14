@@ -29,10 +29,21 @@ class ExamsController extends Controller
      */
     public function show(Subject $subject, Exam $exam)
     {
+        $examTakenCount = \DB::table('exam_user')
+            ->whereUserId($this->user->id)
+            ->whereExamId($exam->id)
+            ->count();
+
         if(!$exam->questionCount() > 0) {
-            flash()->error('Sorry', 'That exam has no questions yet. Plese select another.');
+            flash()->error('Sorry', $exam->name . ' exam has no questions yet. Plese select another.');
             return redirect()->route('subject-exams', $subject->id);
         }
+
+        if($examTakenCount > 0) {
+            flash()->error('Sorry', 'You already taken exam ' . $exam->name . '.');
+            return redirect()->route('subject-exams', $subject->id);
+        }
+
         return view('exams.show', compact('exam'));
 
     }

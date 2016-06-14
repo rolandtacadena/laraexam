@@ -289,9 +289,9 @@ h6 {
 
 .header-options {
     position: absolute;
-    top: 0;
+    top: 13px;
     right: 0;
-    color: white;
+    /*color: white;*/
     font-size: 0.8rem;
 }
 
@@ -315,6 +315,12 @@ h6 {
 .exam-btn {
     /*background: #3C3E42;*/
     background: #074E68;
+}
+
+/*foundation override*/
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after { right: 11px; }
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+    float: left;
 }
 
 
@@ -391,6 +397,17 @@ footer p {
 
 /*Sweet Alert override*/
 .sweet-alert h2 { font-size: 25px; }
+
+/*pagination*/
+.pagination { margin-bottom: 0 !important; }
+.pagination li { margin-right: 1em; }
+.pagination li a { color: #074E68; border-radius: 3px; }
+.pagination li.active span { color: #666; font-weight: bold; }
+.pagination a:hover {
+    background: #074E68;
+    color: #fff;
+}
+
 
 /* Media Queries */
 @media (max-width: 639px) {

@@ -4,12 +4,14 @@
 
     <div class="row general-header">
         <h4>Exam Summary Results for exam <b>{{ $exam->name }}</b></h4>
-        <ul class="header-options menu icon-top">
-            <li><a href="#"><i class="fi-list"></i> <span>One</span></a></li>
-            <li><a href="#"><i class="fi-list"></i> <span>Two</span></a></li>
-            <li><a href="#"><i class="fi-list"></i> <span>Three</span></a></li>
-            <li><a href="#"><i class="fi-list"></i> <span>Four</span></a></li>
-        </ul>
+        <div class="header-options">
+            <ul class="menu icon-top">
+                <li><a href="#"><i class="fi-list"></i> <span>One</span></a></li>
+                <li><a href="#"><i class="fi-list"></i> <span>Two</span></a></li>
+                <li><a href="#"><i class="fi-list"></i> <span>Three</span></a></li>
+                <li><a href="#"><i class="fi-list"></i> <span>Four</span></a></li>
+            </ul>
+        </div>
     </div>
     <hr/>
     <div class="row exam-results">

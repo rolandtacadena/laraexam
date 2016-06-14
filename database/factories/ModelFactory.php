@@ -40,7 +40,7 @@ $factory->define(App\Exam::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->text(15),
         'description' => $faker->text(100),
-        'subject_id' => $faker->numberBetween(1, 8)
+        'subject_id' => $faker->numberBetween(1, 4)
     ];
 });
 
@@ -50,7 +50,7 @@ $factory->define(App\Exam::class, function (Faker\Generator $faker) {
 $factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'question' => $faker->sentence,
-        'exam_id' => $faker->numberBetween(1, 32),
+        'exam_id' => $faker->numberBetween(1, 10),
         'choice1' => $faker->word,
         'choice2' => $faker->word,
         'choice3' => $faker->word,

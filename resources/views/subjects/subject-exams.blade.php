@@ -6,6 +6,9 @@
 
         <div class="general-header row column">
             <h3 class="title-block">Select exams available for <b>{{ $subject->name }}.</b></h3>
+            <div class="header-options">
+                {{  $subjectExams->links() }}
+            </div>
         </div>
         <hr style="margin-bottom: 0;" />
         <div class="row exam-list" data-equalizer data-equalize-on="small" id="test-eq">

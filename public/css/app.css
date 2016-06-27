@@ -27,13 +27,27 @@ h6 {
     padding: 4em 0;
 }
 
+.off-canvas-content { box-shadow: none; }
+
+#offCanvasLeft, #offCanvasRight {
+    background-color: #333;
+    padding: 15px 0px;
+    max-height: 100%;
+    overflow-y: auto;
+    height: 100%;
+}
+#offCanvasLeft ul li a, #offCanvasRight ul li a {
+    color: #fff;
+    font-weight: 600;
+    opacity: .75;
+    font-size: 1.125rem;
+    line-height: 38px;
+}
 .left-divider {
     padding-left: 0;
 }
 .right-divider {}
 
-.off-canvas-content, .off-canvas-content {
-    box-shadow: none; }
 
 #widemenu {
     padding: 0;
@@ -80,8 +94,8 @@ h6 {
 #widemenu .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
     border-color: #666 transparent transparent; }
 
-#site-logo a, #site-logo-mobile a {
-    color: #FFF !important; text-transform: uppercase; padding: 0 !important; }
+#site-logo a, #site-logo-mobile {
+    color: #fff !important; text-transform: uppercase; padding: 0 !important; }
 
 .home-hero {
     padding: 7em 0;

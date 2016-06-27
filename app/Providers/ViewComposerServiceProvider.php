@@ -46,7 +46,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         view()->composer(['*'], function($view) {
             $view->with('signedIn', Auth::check());
-            $view->with('user', Auth::user());
+            $view->with('user', Auth::guard('user')->user());
+            $view->with('admin', Auth::guard('admin')->user());
         });
     }
 }

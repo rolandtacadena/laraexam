@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\AdminAuth;
 
-use App\User;
+use App\Admin;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -28,9 +28,8 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
-    protected $guard = 'user';
-
+    protected $redirectTo = '/admin';
+    protected $guard = 'admin';
     /**
      * Create a new authentication controller instance.
      *
@@ -39,6 +38,19 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    }
+
+    public function showLoginForm(){
+
+        if(view()->exists('auth.authenticate')){
+            return view('auth.authenticate');
+        }
+        return view('admin.auth.login');
+    }
+
+    public function showRegistrationForm(){
+
+        return view('admin.auth.register');
     }
 
     /**
@@ -57,14 +69,14 @@ class AuthController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Create a new admin instance after a valid registration.
      *
      * @param  array  $data
      * @return User
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

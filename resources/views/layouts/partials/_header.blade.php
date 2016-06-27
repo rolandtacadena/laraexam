@@ -33,7 +33,7 @@
 
             <div class="title-bar-left">
                 <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-                <span id="site-logo-mobile title-bar-title"><a href="{{ route('index') }}">LaraExam</a></span>
+                <span id="title-bar-title"><a id="site-logo-mobile" href="{{ route('index') }}">LaraExam</a></span>
             </div>
 
             <div class="title-bar-right">

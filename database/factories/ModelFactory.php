@@ -40,7 +40,7 @@ $factory->define(App\Exam::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->text(15),
         'description' => $faker->text(100),
-        'subject_id' => $faker->numberBetween(1, 4)
+        'subject_id' => $faker->numberBetween(1, 8)
     ];
 });
 

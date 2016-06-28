@@ -14,11 +14,13 @@ use App\Http\Requests;
 class ExamsController extends Controller
 {
 
+    /**
+     * Get the parent variables from parent class.
+     */
     public function __construct()
     {
         parent::__construct();
     }
-
 
     /**
      * Show exam details.

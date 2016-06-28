@@ -11,14 +11,15 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
-
 Route::auth();
 
 Route::get('/', 'PagesController@index')
     ->name('index');
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('subjects', 'SubjectsController@all')
+        ->name('subjects-all');
 
     Route::get('subject-exams/subject-{subject}', 'SubjectsController@exams')
         ->name('subject-exams');
@@ -44,14 +45,18 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => ['web']], function () {
-    //Login Routes...
+
+    //Admin Login Routes...
     Route::get('/admin/login','AdminAuth\AuthController@showLoginForm');
     Route::post('/admin/login','AdminAuth\AuthController@login');
     Route::get('/admin/logout','AdminAuth\AuthController@logout');
 
-    // Registration Routes...
+    // Admin Registration Routes...
     Route::get('admin/register', 'AdminAuth\AuthController@showRegistrationForm');
     Route::post('admin/register', 'AdminAuth\AuthController@register');
 
-    Route::get('/admin', 'AdminController@index');
+    // Admin Routes
+    Route::get('admin', 'AdminsController@index')
+        ->name('admin-dashboard');
+
 });

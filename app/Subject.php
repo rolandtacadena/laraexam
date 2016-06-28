@@ -15,7 +15,7 @@ class Subject extends Model
      * Attributes that are mass assignable.
      */
     protected $fillable = [
-        'name', 'description', 'photo'
+        'admin_id', 'name', 'description', 'photo'
     ];
 
     /**
@@ -26,6 +26,16 @@ class Subject extends Model
     public function exams()
     {
         return $this->hasMany(Exam::class);
+    }
+
+    /**
+     * A subject is created by admin.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
     }
 
 }

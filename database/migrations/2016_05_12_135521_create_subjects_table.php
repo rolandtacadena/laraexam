@@ -14,6 +14,13 @@ class CreateSubjectsTable extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('admin_id')->unsigned();
+            $table->foreign('admin_id')
+                ->references('id')
+                ->on('admins')
+                ->onDelete('cascade');
+
             $table->string('name');
             $table->text('description');
             $table->string('photo');

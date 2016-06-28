@@ -15,7 +15,6 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->composeSubjectsInIndex();
         $this->composeUserOnEveryView();
     }
 
@@ -30,22 +29,13 @@ class ViewComposerServiceProvider extends ServiceProvider
     }
 
     /**
-     * Return all subjects in index view.
-     */
-    public function composeSubjectsInIndex()
-    {
-        view()->composer(['index'], function ($view) {
-            $view->with('subjects', Subject::has('exams')->get());
-        });
-    }
-
-    /**
-     * make 'signedIn' and 'user' globally accessible in every views.
+     * Make 'signedIn', 'user' and 'adminSignedIn' globally accessible.
      */
     public function composeUserOnEveryView()
     {
         view()->composer(['*'], function($view) {
-            $view->with('signedIn', Auth::check());
+            $view->with('studentSignedIn', Auth::guard('user')->check());
+            $view->with('adminSignedIn', Auth::guard('admin')->check());
             $view->with('user', Auth::guard('user')->user());
             $view->with('admin', Auth::guard('admin')->user());
         });

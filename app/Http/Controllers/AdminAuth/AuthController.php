@@ -24,12 +24,13 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
-     * Where to redirect users after login / registration.
+     * Where to redirect admin after login / registration.
      *
      * @var string
      */
     protected $redirectTo = '/admin';
     protected $guard = 'admin';
+
     /**
      * Create a new authentication controller instance.
      *
@@ -40,6 +41,11 @@ class AuthController extends Controller
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
+    /**
+     * Show admin login form
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showLoginForm(){
 
         if(view()->exists('auth.authenticate')){
@@ -48,6 +54,11 @@ class AuthController extends Controller
         return view('admin.auth.login');
     }
 
+    /**
+     * Show admin registration form
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showRegistrationForm(){
 
         return view('admin.auth.register');

@@ -53,9 +53,9 @@ h6 {
     padding: 0;
 }
 
-.user-holder { background: #CECECE; }
-
-
+.top-bar-right .has-submenu {
+    background: #CECECE;
+}
 
 .login {
     border-right: 1px solid #e2e2e2;

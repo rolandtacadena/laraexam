@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'admin_id', 'name', 'email', 'password',
     ];
 
     /**
@@ -33,6 +33,24 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Exam::class)
             ->withPivot('completed', 'num_correct', 'num_wrong');
+    }
+
+    /**
+     * A student/user is managed by admin.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
+    }
+
+    /*
+     * Return admin who manages the user.
+     */
+    public function administrator()
+    {
+        return $this->admin;
     }
 
 }

@@ -12,10 +12,23 @@
 */
 
 /*
+ * Admin Model Factory.
+ */
+$factory->define(App\Admin::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'password' => bcrypt(str_random(10)),
+        'remember_token' => str_random(10),
+    ];
+});
+
+/*
  * User Model Factory.
  */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
+        'admin_id' => $faker->numberBetween(1, 2),
         'name' => $faker->name,
         'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
@@ -28,6 +41,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
  */
 $factory->define(App\Subject::class, function (Faker\Generator $faker) {
     return [
+        'admin_id' => $faker->numberBetween(1, 2),
         'name' => $faker->text(12),
         'description' => $faker->text(100)
     ];

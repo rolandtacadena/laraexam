@@ -24,4 +24,24 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Admin can create many subjects.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
+
+    /**
+     * Admin manages many students
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function students()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

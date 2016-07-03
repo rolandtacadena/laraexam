@@ -24,6 +24,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getNameAttribute($value)
+    {
+        return ucwords($value);
+    }
+
     /**
      * User can take many exams.
      *

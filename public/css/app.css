@@ -19,15 +19,13 @@ h6 {
     color: #303132;
 }
 
-.logo-link {
-
-}
+a:visited { background: #074E68; }
 
 .main-container {
-    padding: 4em 0;
+    padding: 4em 0 4em 0;
 }
 
-.off-canvas-content { box-shadow: none; }
+.off-canvas-content { box-shadow: none; background: #F5F5F1; }
 
 #offCanvasLeft, #offCanvasRight {
     background-color: #333;
@@ -53,8 +51,8 @@ h6 {
     padding: 0;
 }
 
-.top-bar-right .has-submenu {
-    background: #CECECE;
+.top-bar-right {
+    margin-right: 1em;
 }
 
 .login {
@@ -69,9 +67,9 @@ h6 {
     color: #fff;
     background-color: #074e68; }
 
-#widemenu li.has-submenu {
-    border-left: 1px solid #d5c2c2;
-    border-right: none;  }
+/*#widemenu li.has-submenu {*/
+    /*border-left: 1px solid #d5c2c2;*/
+    /*border-right: none;  }*/
 
 /*#widemenu li.has-submenu:last-child {*/
 /*border-right: 1px solid #4d4d4d; }*/
@@ -103,11 +101,7 @@ h6 {
 
 .home-hero h1, .home-hero h2 {
     font-family: 'Lato', sans-serif;
-    font-weight: 300;
-}
-
-.features {
-    margin-bottom: 3em;
+    font-weight: 400;
 }
 
 .features h3 {
@@ -236,7 +230,7 @@ h6 {
 }
 
 .student-exam-form {
-    padding: 20px 0;
+    padding: 2em;
 }
 
 .student-exam-form fieldset {
@@ -277,6 +271,10 @@ h6 {
     text-align: left;
 }
 
+.exam-details {
+    padding: 1em;
+}
+
 
 .subj-levels h2 {
     font-family: 'Lato', sans-serif;
@@ -313,24 +311,6 @@ h6 {
     color: #fff;
 }
 
-.exam-submit, .exam-cancel {
-    background: #074E68;
-    color: white;
-    font-size: 0.8rem;
-    padding: 0.75rem 1rem;
-    z-index: 1;
-    border: 0;
-}
-
-.exam-submit:hover, .exam-cancel:hover {
-    color: #fff;
-}
-
-.exam-btn {
-    /*background: #3C3E42;*/
-    background: #074E68;
-}
-
 /*foundation override*/
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after { right: 11px; }
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
@@ -350,7 +330,7 @@ h6 {
     color: #63aa63;
 }
 
-.title-block { color: #074e68 }
+.title-block { color: #074e68; margin-bottom: 1em; }
 
 .subject-chunk-divider, .exam-chunk-divider {
     border-bottom: 1px solid #e2e2e2;
@@ -358,6 +338,18 @@ h6 {
 
 .subject-block, .exam-block {
     border-right: 1px solid #e2e2e2;
+    padding: 1em;
+}
+
+.subject-block:hover, .exam-block:hover {
+    border-top: 2px solid #333;
+    cursor: pointer;
+    background: #f8f8f8;
+}
+
+.subject-block:hover .subject-title,
+.exam-block:hover .exam-name {
+    color: #000;
 }
 
 .subject-block:last-child, .exam-block:last-child {
@@ -366,6 +358,10 @@ h6 {
 
 .subject-block p,
 .exam-block p { color: rgb(63, 52, 52); }
+
+.loggedin-user-name {
+    font-weight: bold;
+}
 
 footer.main {
     font-family: 'Lato', sans-serif;
@@ -398,16 +394,73 @@ footer p {
     font-weight: 100;
 }
 
-.button { border-radius: 3px; }
-.button:hover {
-    /*background: #074E68;*/
-    background: #3C3E42;
+
+.row .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.box {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+}
+.correct-wrong-tally h2 {
+    font-size: 4em;
+}
+
+.correct-wrong-tally .correct-container {
+    border-right: 1px solid #e2e2e2; }
+
+.correct-wrong-tally .correct-container h2 {
+    color: green; }
+
+.correct-wrong-tally .wrong-container h2 {
+    color: red; }
+
+.button, input[type="submit"] {
+    box-shadow: 0 -4px 0 rgba(0,0,0,0.2) inset;
+    -moz-box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    background-color: #074E68;
+}
+
+.exam-submit, .exam-cancel {
+    background: #074E68;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+    z-index: 1;
+    border: 0; }
+
+.exam-submit:hover, .exam-cancel:hover {
+    color: #fff; }
+
+.exam-btn {
+    background-color: #074E68; }
+
+/*Tabs*/
+.tabs { border: none; }
+.tabs-content.vertical { border: 0; }
+.tabs-title > a:hover {
+    border-left: 4px solid #333;
+}
+.tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+    border-left: 4px solid #333;
+    background: none;
+}
+
+.tabs-title > a {
+    font-size: .85em;
 }
 
 .user-details {
     font-size: 14px;
-    color: #8c8c8c;
-}
+    color: #8c8c8c; }
 
 /*Sweet Alert override*/
 .sweet-alert h2 { font-size: 25px; }
@@ -419,8 +472,7 @@ footer p {
 .pagination li.active span { color: #666; font-weight: bold; }
 .pagination a:hover {
     background: #074E68;
-    color: #fff;
-}
+    color: #fff; }
 
 
 /* Media Queries */

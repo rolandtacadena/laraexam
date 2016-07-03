@@ -4,23 +4,22 @@
         @if ($studentSignedIn)
 
             <li class="has-submenu">
-                <a href="#">{{ $user->name }}</a>
+                <a href="#" class="loggedin-user-name">{{ $user->name }}</a>
                 <ul class="menu submenu vertical" data-submenu>
                     <li><a href="{{ route('user-profile', $user->id) }}">Profile</a></li>
+                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 
         @elseif($adminSignedIn)
 
             <li class="has-submenu">
-                <a href="#">{{ $admin->name }}</a>
+                <a href="#" class="loggedin-user-name">{{ $admin->name }}</a>
                 <ul class="menu submenu vertical" data-submenu>
                     <li><a href="{{ route('user-profile', $admin->id) }}">Profile</a></li>
+                    <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-
         @else
 
             <li class="has-submenu">

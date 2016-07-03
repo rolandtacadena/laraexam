@@ -34,14 +34,11 @@ class CreateResultsTable extends Migration
                 ->onDelete('cascade');
 
             $table->string('question');
-
             $table->string('user_answer');
-
             $table->string('correct_answer');
-
             $table->integer('remarks');
-
             $table->timestamps();
+
         });
     }
 

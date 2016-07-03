@@ -10,6 +10,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class ExamsController extends Controller
 {
@@ -31,7 +32,7 @@ class ExamsController extends Controller
      */
     public function show(Subject $subject, Exam $exam)
     {
-        $examTakenCount = \DB::table('exam_user')
+        $examTakenCount = DB::table('exam_user')
             ->whereUserId($this->user->id)
             ->whereExamId($exam->id)
             ->count();
@@ -133,13 +134,18 @@ class ExamsController extends Controller
      * @param $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function result(Exam $exam, User $user)
+    public function result(Exam $exam)
     {
+        $examScore = DB::table('exam_user')
+            ->where('user_id', $this->user->id)
+            ->where('exam_id', $exam->id)
+            ->first();
 
-        $examSummary = Result::whereUserId($user->id)
+        $examSummary = Result::whereUserId($this->user->id)
             ->whereExamId($exam->id)->get();
 
-        return view('exams.result', compact('examSummary', 'exam', 'examResult'));
+
+        return view('exams.result', compact('examSummary', 'exam', 'examScore'));
 
     }
 }

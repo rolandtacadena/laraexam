@@ -17,8 +17,7 @@ class Result extends Model
         'question',
         'user_answer',
         'correct_answer',
-        'remarks',
-        'score'
+        'remarks'
     ];
 
 

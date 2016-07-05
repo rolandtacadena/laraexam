@@ -48,7 +48,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('user/{user}/dashboard', 'UsersController@dashboard')
         ->name('user-dashboard');
 
-
     Route::get('user/{user}/settings', 'UsersController@settings')
         ->name('user-settings');
 

@@ -25,7 +25,7 @@
         @else
 
             <li class="how-it-works has-submenu">
-                <a class="user-dropdown" href="{{ route('how-it-works') }}"><strong>How it works? </strong></a>
+                <a class="user-dropdown" href="{{ route('how-it-works') }}">How it works?</a>
             </li>
 
             <li class="has-submenu">
@@ -37,7 +37,7 @@
             </li>
 
             <li class="has-submenu user-holder">
-                <a class="admin-dropdown" href="#">Admin</a>
+                <a class="admin-dropdown" href="#">Teacher</a>
                 <ul class="menu submenu vertical" data-submenu>
                     <li class="login"><a href="{{ url('admin/login') }}">Login</a></li>
                     <li class="register"><a href="{{ url('admin/register') }}">Register</a></li>

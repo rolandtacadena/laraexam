@@ -95,14 +95,14 @@ a:visited { background: #074E68; }
 #widemenu li.has-submenu:hover,
 #widemenu li.has-submenu:hover ul > li { border-bottom: none; }
 
-.how-it-works {
-    /*color: #fff;*/
+li.how-it-works {
+    background: #aeaeae;
 }
 .how-it-works a { color: #333 !important;}
 .how-it-works a:hover { color: red; }
 
 #widemenu ul li a {
-    color: #525252; line-height: 2;}
+    color: #333; line-height: 2; font-weight: bold; }
 
 #widemenu .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
     border-color: #666 transparent transparent; }

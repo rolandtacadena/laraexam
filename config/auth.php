@@ -46,9 +46,9 @@ return [
             'provider' => 'users'
         ],
 
-        'admin' => [
+        'teacher' => [
             'driver' => 'session',
-            'provider' => 'admins'
+            'provider' => 'teachers'
         ],
 
         'api' => [
@@ -80,9 +80,9 @@ return [
             'model' => App\User::class,
         ],
 
-        'admins' => [
+        'teachers' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => App\Teacher::class,
         ]
 
         // 'users' => [
@@ -117,9 +117,9 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'admins' => [
-            'provider' => 'admins',
-            'email' => 'admin.auth.emails.password',
+        'teachers' => [
+            'provider' => 'teachers',
+            'email' => 'teacher.auth.emails.password',
             'table' => 'password_resets',
             'expire' => 60,
         ],

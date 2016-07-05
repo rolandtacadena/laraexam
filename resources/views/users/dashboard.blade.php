@@ -12,9 +12,13 @@
                     <h4>Your Exam History</h4>
 
                     <div class="row">
+
                         @foreach($user->exams->chunk(3) as $set)
+
                             <div>
+
                                 @foreach($set as $userExam)
+
                                     <div class="small-12 medium-6 large-3 columns text-center">
                                         <img src="{{ URL::asset('img/exam2.svg') }}">
                                         <h5 class="feature-block-header">{{ $userExam->name }}</h5>
@@ -22,9 +26,13 @@
                                         <p>{{ $userExam->created_at->diffForHumans()}}</p>
                                         <a href="{{ route('exam-result', [$userExam->id, $user->id]) }}" class="button exam-btn">View Result</a>
                                     </div>
+
                                 @endforeach
+
                             </div>
+
                         @endforeach
+
                     </div>
                 </div>
             </div>

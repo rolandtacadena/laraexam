@@ -29,15 +29,15 @@ class ViewComposerServiceProvider extends ServiceProvider
     }
 
     /**
-     * Make 'signedIn', 'user' and 'adminSignedIn' globally accessible.
+     * Make 'signedIn', 'user' and 'teacherSignedIn' globally accessible.
      */
     public function composeUserOnEveryView()
     {
         view()->composer(['*'], function($view) {
             $view->with('studentSignedIn', Auth::guard('user')->check());
-            $view->with('adminSignedIn', Auth::guard('admin')->check());
+            $view->with('teacherSignedIn', Auth::guard('teacher')->check());
             $view->with('user', Auth::guard('user')->user());
-            $view->with('admin', Auth::guard('admin')->user());
+            $view->with('teacher', Auth::guard('teacher')->user());
         });
     }
 }

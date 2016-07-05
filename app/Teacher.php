@@ -4,8 +4,13 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends Authenticatable
+class Teacher extends Authenticatable
 {
+    /*
+     * Table used for this model.
+     */
+    protected $table = 'teachers';
+
     /**
      * The attributes that are mass assignable.
      *

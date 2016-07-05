@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class AdminsController extends Controller
+class TeachersController extends Controller
 {
     /**
      * Get parent's construct and set middleware.
@@ -15,7 +15,7 @@ class AdminsController extends Controller
 
         parent::__construct();
 
-        $this->middleware('admin');
+        $this->middleware('teacher');
     }
 
     /**
@@ -24,7 +24,7 @@ class AdminsController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(){
-        return view('admin.dashboard');
+        return view('teacher.dashboard');
     }
 
 }

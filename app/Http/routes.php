@@ -51,22 +51,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('user/{user}/settings', 'UsersController@settings')
         ->name('user-settings');
 
-
 });
 
 Route::group(['middleware' => ['web']], function () {
 
-    //Admin Login Routes...
-    Route::get('/admin/login','AdminAuth\AuthController@showLoginForm');
-    Route::post('/admin/login','AdminAuth\AuthController@login');
-    Route::get('/admin/logout','AdminAuth\AuthController@logout');
+    //Teacher Login Routes...
+    Route::get('/teacher/login','TeacherAuth\AuthController@showLoginForm');
+    Route::post('/teacher/login','TeacherAuth\AuthController@login');
+    Route::get('/teacher/logout','TeacherAuth\AuthController@logout');
 
-    // Admin Registration Routes...
-    Route::get('admin/register', 'AdminAuth\AuthController@showRegistrationForm');
-    Route::post('admin/register', 'AdminAuth\AuthController@register');
+    // Teacher Registration Routes...
+    Route::get('teacher/register', 'TeacherAuth\AuthController@showRegistrationForm');
+    Route::post('teacher/register', 'TeacherAuth\AuthController@register');
 
-    // Admin Routes
-    Route::get('admin', 'AdminsController@index')
-        ->name('admin-dashboard');
+    // Teacher Routes
+    Route::get('teacher', 'TeachersController@index')
+        ->name('teacher-dashboard');
 
 });

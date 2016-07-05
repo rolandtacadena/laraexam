@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfNotAdmin
+class RedirectIfNotTeacher
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class RedirectIfNotAdmin
      * @param string $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = 'admin')
+    public function handle($request, Closure $next, $guard = 'teacher')
     {
         if (!Auth::guard($guard)->check()) {
             return redirect('/');

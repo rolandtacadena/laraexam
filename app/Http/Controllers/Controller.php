@@ -15,14 +15,14 @@ class Controller extends BaseController
 
     protected $user;
 
-    protected $admin;
+    protected $teacher;
 
     /**
-     * Set $user variable as current authenticated user in every controller
+     * Set $user variable as current authenticated user in every controller.
      */
     public function __construct()
     {
         $this->user = Auth::guard('user')->user();
-        $this->admin = Auth::guard('admin')->user();
+        $this->admin = Auth::guard('teacher')->user();
     }
 }

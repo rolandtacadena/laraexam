@@ -31,10 +31,9 @@ class AuthController extends Controller
     protected $redirectTo = '/subjects';
     protected $guard = 'user';
 
+
     /**
      * Create a new authentication controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {

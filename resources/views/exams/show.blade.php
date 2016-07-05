@@ -3,6 +3,7 @@
 @section('content')
 
     <div class="row">
+
         <div class="medium-7 columns">
             <!-- temporary exam image -->
             <img class="thumbnail" src="{{ URL::asset('img/home-bg-01.svg') }}">

@@ -10,15 +10,14 @@ use App\Http\Requests;
 
 class SubjectsController extends Controller
 {
-
     /**
-     * Get all subject choices for student that is owned by the administrator
+     * Get all subjects for student that is owned by the administrator.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function all()
     {
-        $subjects = $this->user->administrator()->subjects()->has('exams')->get();
+        $subjects = $this->user->managingTeacher()->subjects()->has('exams')->get();
         return view('subjects.subject-list', compact('subjects'));
     }
 

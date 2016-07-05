@@ -35,7 +35,7 @@ class Subject extends Model
      */
     public function admin()
     {
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(Teacher::class);
     }
 
 }

@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class PagesController extends Controller
@@ -18,6 +15,9 @@ class PagesController extends Controller
         return view('index');
     }
 
+    /*
+     * Show guidelines about how the app works.
+     */
     public function how_it_works()
     {
         return view('pages.how-it-works');

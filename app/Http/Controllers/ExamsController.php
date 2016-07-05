@@ -6,7 +6,6 @@ use App\Exam;
 use App\Question;
 use App\Result;
 use App\Subject;
-use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -75,14 +74,12 @@ class ExamsController extends Controller
     {
         $userAnswers = $request->input('questions');
         $exam = Exam::findOrFail($request->input('exam'));
-
         $correct = 0;
         $wrong = 0;
 
         foreach($userAnswers as $userAnsweredQuestion => $whatUserAnswered)
         {
             $question = Question::findOrFail($userAnsweredQuestion);
-
             if($whatUserAnswered == $question->answer) {
                 $remarks = 1;
                 $correct++;
@@ -90,7 +87,6 @@ class ExamsController extends Controller
                 $remarks = 0;
                 $wrong++;
             }
-
             Result::create([
                 'user_id' => $this->user->id,
                 'exam_id' => $exam->id,
@@ -107,14 +103,11 @@ class ExamsController extends Controller
             'num_correct' => $correct,
             'num_wrong' => $wrong
         ]);
-
         flash()->overlay('Congrats!', 'You made it to exam. Please check summary of your answers.');
-
         return redirect()->action('ExamsController@result', [
             'exam' => $exam,
             'user' => $this->user
         ]);
-
     }
 
     /**
@@ -130,8 +123,7 @@ class ExamsController extends Controller
     /**
      * Return exam results from givem exam id and user id.
      *
-     * @param $exam
-     * @param $user
+     * @param Exam $exam
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function result(Exam $exam)
@@ -144,8 +136,6 @@ class ExamsController extends Controller
         $examSummary = Result::whereUserId($this->user->id)
             ->whereExamId($exam->id)->get();
 
-
         return view('exams.result', compact('examSummary', 'exam', 'examScore'));
-
     }
 }

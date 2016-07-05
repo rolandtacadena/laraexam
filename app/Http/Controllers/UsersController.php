@@ -20,11 +20,21 @@ class UsersController extends Controller
         return view('users.profile');
     }
 
+    /**
+     * Show dashboard.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function dashboard()
     {
         return view('users.dashboard');
     }
 
+    /**
+     * Show user settings.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function settings()
     {
         return view('users.settings');

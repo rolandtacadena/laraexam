@@ -3,16 +3,20 @@
 @section('content')
 
     <div class="row column">
+
         <div class="general-header row">
             <h3 class="title-block">Questions for exam <b><u>{{ $exam->name }}</u></b></h3>
         </div>
+
         <div class="box">
             <div class="row student-exam-form">
 
                 @if(count($exam->questions) > 0)
 
                     <form method="POST" action="{{ route('exam-process') }}">
+
                         {{ csrf_field() }}
+
                         <input type="hidden" name="exam" value="{{ $exam->id }}"/>
 
                         @foreach($exam->questions as $question)
@@ -58,6 +62,7 @@
                                 </label>
 
                             </fieldset>
+
                             <hr/>
 
                         @endforeach
@@ -77,7 +82,5 @@
             </div>
         </div>
     </div>
-
-
 
 @endsection

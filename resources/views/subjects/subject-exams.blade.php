@@ -49,7 +49,6 @@
 
         </div>
 
-
     @else
 
         <div class="row column no-exam-available">

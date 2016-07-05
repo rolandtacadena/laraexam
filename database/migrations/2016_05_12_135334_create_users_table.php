@@ -15,10 +15,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('admin_id')->unsigned();
-            $table->foreign('admin_id')
+            $table->integer('teacher_id')->unsigned();
+            $table->foreign('teacher_id')
                 ->references('id')
-                ->on('admins')
+                ->on('teachers')
                 ->onDelete('cascade');
 
             $table->string('name');

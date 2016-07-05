@@ -6,6 +6,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    /*
+     * Table used for this model.
+     */
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -45,17 +51,17 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function admin()
+    public function teacher()
     {
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(Teacher::class);
     }
 
     /*
      * Return admin who manages the user.
      */
-    public function administrator()
+    public function managingTeacher()
     {
-        return $this->admin;
+        return $this->teacher;
     }
 
 }

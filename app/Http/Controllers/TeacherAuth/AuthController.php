@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\AdminAuth;
+namespace App\Http\Controllers\TeacherAuth;
 
-use App\Admin;
+use App\Teacher;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -24,17 +24,15 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
-     * Where to redirect admin after login / registration.
+     * Where to redirect teacher after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
-    protected $guard = 'admin';
+    protected $redirectTo = '/teacher';
+    protected $guard = 'teacher';
 
-    /**
+    /*
      * Create a new authentication controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -42,7 +40,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Show admin login form
+     * Show teacher login form.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -51,17 +49,17 @@ class AuthController extends Controller
         if(view()->exists('auth.authenticate')){
             return view('auth.authenticate');
         }
-        return view('admin.auth.login');
+        return view('teacher.auth.login');
     }
 
     /**
-     * Show admin registration form
+     * Show teacher registration form
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function showRegistrationForm(){
 
-        return view('admin.auth.register');
+        return view('teacher.auth.register');
     }
 
     /**
@@ -80,14 +78,14 @@ class AuthController extends Controller
     }
 
     /**
-     * Create a new admin instance after a valid registration.
+     * Create a new teacher instance after a valid registration.
      *
      * @param  array  $data
      * @return User
      */
     protected function create(array $data)
     {
-        return Admin::create([
+        return Teacher::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Result extends Model
 {
+    /*
+     * Table used for this model.
+     */
+    protected $table = 'results';
 
     /*
      * Fillable fields for results table.

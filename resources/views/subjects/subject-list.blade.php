@@ -43,8 +43,8 @@
                 <p>No Subjects available yet.</p>
 
             @endif
-        </div>
 
+        </div>
 
     </div>
 

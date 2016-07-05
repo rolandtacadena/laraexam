@@ -16,6 +16,9 @@ Route::auth();
 Route::get('/', 'PagesController@index')
     ->name('index');
 
+Route::get('how-it-works', 'PagesController@how_it_works')
+    ->name('how-it-works');
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('subjects', 'SubjectsController@all')
@@ -41,6 +44,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('user/{user}/profile', 'UsersController@profile')
         ->name('user-profile');
+
+    Route::get('user/{user}/dashboard', 'UsersController@dashboard')
+        ->name('user-dashboard');
+
+
+    Route::get('user/{user}/settings', 'UsersController@settings')
+        ->name('user-settings');
+
 
 });
 

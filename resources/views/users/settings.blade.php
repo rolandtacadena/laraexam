@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <div class="row column expanded user-profile">
+    <div class="row column user-settings">
+
+
 
     </div>
 

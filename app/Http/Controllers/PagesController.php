@@ -17,4 +17,9 @@ class PagesController extends Controller
     {
         return view('index');
     }
+
+    public function how_it_works()
+    {
+        return view('pages.how-it-works');
+    }
 }

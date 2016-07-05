@@ -26,6 +26,8 @@
             </div>
         </div>
 
+        <br/>
+
         <div class="box clearfix">
             <div class="row exam-results">
                 <table class="stack">

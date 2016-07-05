@@ -20,8 +20,13 @@ class UsersController extends Controller
         return view('users.profile');
     }
 
-    public function exam_history()
+    public function dashboard()
     {
+        return view('users.dashboard');
+    }
 
+    public function settings()
+    {
+        return view('users.settings');
     }
 }

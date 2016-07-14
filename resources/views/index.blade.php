@@ -17,7 +17,7 @@
 
                     @elseif($teacherSignedIn)
 
-                        <a href="{{ route('teacher-dashboard') }}" class="large button exam-btn">Go To Teacher's Dashboard</a>
+                        <a href="{{ route('teacher-subjects') }}" class="large button exam-btn">Go To Teacher's Dashboard</a>
 
                     @else
 

@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::auth();
 
 Route::get('/', 'PagesController@index')
@@ -39,33 +40,55 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('exam-results', 'ExamsController@all_results')
         ->name('exam_results');
 
+    Route::group(['prefix' => 'user', 'as' => 'user-'], function() {
+        Route::get('{user}/profile', 'UsersController@profile')
+            ->name('profile');
+
+        Route::get('{user}/dashboard', 'UsersController@dashboard')
+            ->name('dashboard');
+
+        Route::get('{user}/settings', 'UsersController@settings')
+            ->name('settings');
+    });
+
     Route::get('exam-result/exam-{exam}/user-{user}', 'ExamsController@result')
         ->name('exam-result');
 
-    Route::get('user/{user}/profile', 'UsersController@profile')
-        ->name('user-profile');
-
-    Route::get('user/{user}/dashboard', 'UsersController@dashboard')
-        ->name('user-dashboard');
-
-    Route::get('user/{user}/settings', 'UsersController@settings')
-        ->name('user-settings');
-
 });
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web'], 'prefix' => 'teacher'], function () {
 
     //Teacher Login Routes...
-    Route::get('/teacher/login','TeacherAuth\AuthController@showLoginForm');
-    Route::post('/teacher/login','TeacherAuth\AuthController@login');
-    Route::get('/teacher/logout','TeacherAuth\AuthController@logout');
+    Route::get('login','TeacherAuth\AuthController@showLoginForm');
+    Route::post('login','TeacherAuth\AuthController@login');
+    Route::get('logout','TeacherAuth\AuthController@logout');
 
     // Teacher Registration Routes...
-    Route::get('teacher/register', 'TeacherAuth\AuthController@showRegistrationForm');
-    Route::post('teacher/register', 'TeacherAuth\AuthController@register');
+    Route::get('register', 'TeacherAuth\AuthController@showRegistrationForm');
+    Route::post('register', 'TeacherAuth\AuthController@register');
 
     // Teacher Routes
-    Route::get('teacher', 'TeachersController@index')
-        ->name('teacher-dashboard');
+    Route::group(['as' => 'teacher-'], function() {
 
+        Route::get('dashboard/subjects', 'TeachersController@subjects')
+            ->name('subjects');
+
+        Route::get('dashboard/subjects/{subject}', 'TeachersController@view_subject')
+            ->name('view-subject');
+
+        Route::post('dashboard/subjects', 'TeachersController@create_subject')
+            ->name('create-subject');
+
+        Route::get('dashboard/exams', 'TeachersController@exams')
+            ->name('exams');
+
+        Route::post('dashboard/exams', 'TeachersController@create_exam')
+            ->name('create-exam');
+
+        Route::get('dashboard/questions', 'TeachersController@questions')
+            ->name('questions');
+
+        Route::get('dashboard/students', 'TeachersController@students')
+            ->name('students');
+    });
 });

@@ -38,4 +38,31 @@ class Subject extends Model
         return $this->belongsTo(Teacher::class);
     }
 
+    /**
+     * Local scope query to return the latest subjects.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeLatest($query)
+    {
+        return $query->orderBy('created_at', 'desc')->get();
+    }
+
+    /**
+     * Local scope query to return the oldest subjects.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeOldest($query)
+    {
+        return $query->orderBy('created_at', 'asc')->get();
+    }
+
+    public function examCount()
+    {
+        return $this->exams()->count();
+    }
+
 }

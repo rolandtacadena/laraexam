@@ -37,6 +37,28 @@ class Exam extends Model
     }
 
     /**
+     * Local scope query to return the latest exams.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeLatest($query)
+    {
+        return $query->orderBy('created_at', 'desc')->get();
+    }
+
+    /**
+     * Local scope query to return the oldest exams.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeOldest($query)
+    {
+        return $query->orderBy('created_at', 'asc')->get();
+    }
+
+    /**
      * Returns the subject where the exam belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

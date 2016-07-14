@@ -23,6 +23,6 @@ class Controller extends BaseController
     public function __construct()
     {
         $this->user = Auth::guard('user')->user();
-        $this->admin = Auth::guard('teacher')->user();
+        $this->teacher = Auth::guard('teacher')->user();
     }
 }

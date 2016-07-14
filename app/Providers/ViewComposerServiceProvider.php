@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Subject;
+use App\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,6 +16,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->composeUserOnEveryView();
+        $this->composerTeacherNav();
+
     }
 
     /**
@@ -38,6 +40,13 @@ class ViewComposerServiceProvider extends ServiceProvider
             $view->with('teacherSignedIn', Auth::guard('teacher')->check());
             $view->with('user', Auth::guard('user')->user());
             $view->with('teacher', Auth::guard('teacher')->user());
+        });
+    }
+
+    public function composerTeacherNav()
+    {
+        view()->composer(['teacher.teacher-nav'], function($view) {
+            $view->with('currentPath', \Request::path());
         });
     }
 }

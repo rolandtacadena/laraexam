@@ -23,7 +23,7 @@
                                         <img src="{{ URL::asset('img/exam2.svg') }}">
                                         <h5 class="feature-block-header">{{ $userExam->name }}</h5>
                                         <p>Subject: <b><a href="{{ route('subject-exams', $userExam->subject->id) }}">{{ $userExam->subject->name }}</a></b></p>
-                                        <p>{{ $userExam->created_at->diffForHumans()}}</p>
+                                        <p>{{ $userExam->updated_at->diffForHumans()}}</p>
                                         <a href="{{ route('exam-result', [$userExam->id, $user->id]) }}" class="button exam-btn">View Result</a>
                                     </div>
 

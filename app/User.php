@@ -30,9 +30,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /*
+    * Name attribute accessor.
+    */
     public function getNameAttribute($value)
     {
         return ucwords($value);
+    }
+
+    /*
+     * Name attribute mutator.
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
     }
 
     /**

@@ -51,11 +51,8 @@ class TeachersController extends Controller
      */
     public function create_subject(Request $request)
     {
-
-        $this->teacher->subjects()->create($request->all());
-
+        $this->teacher->createSubject($request->all());
         flash()->success('Subject Added', 'You have successfully added a subject!');
-
         return redirect()->route('teacher-subjects');
     }
 
@@ -73,11 +70,8 @@ class TeachersController extends Controller
     public function create_exam(Request $request)
     {
         $subject = Subject::findOrFail($request->input('subject_id'));
-//        dd($subject->exams()->create($request->all()));
-        $subject->exams()->create($request->all());
-
+        $subject->createExam($request->all());
         flash()->success('Exam Added', 'You have successfully added a exam!');
-
         return redirect()->route('teacher-exams');
     }
 
@@ -99,16 +93,6 @@ class TeachersController extends Controller
     public function students()
     {
         return view('teacher.students');
-    }
-
-    public function getAllSubjects(Subject $subject)
-    {
-        $subject = Subject::find(1);
-        $subject->name = 'Roland';
-        $subject->description = 'desc';
-        $subject->save();
-
-        return redirect()->route('subjects');
     }
 
 }

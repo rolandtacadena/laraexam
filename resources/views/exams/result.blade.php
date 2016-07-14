@@ -5,14 +5,6 @@
     <div class="row column">
         <div class="row general-header">
             <h4 class="title-block">Exam Summary Results for exam <b>{{ $exam->name }}</b></h4>
-            {{--<div class="header-options">--}}
-                {{--<ul class="menu icon-top">--}}
-                    {{--<li><a href="#"><i class="fi-list"></i> <span>One</span></a></li>--}}
-                    {{--<li><a href="#"><i class="fi-list"></i> <span>Two</span></a></li>--}}
-                    {{--<li><a href="#"><i class="fi-list"></i> <span>Three</span></a></li>--}}
-                    {{--<li><a href="#"><i class="fi-list"></i> <span>Four</span></a></li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
         </div>
 
         <div class="box correct-wrong-tally clearfix text-center">

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\User;
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
 

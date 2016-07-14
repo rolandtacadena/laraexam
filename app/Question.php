@@ -24,6 +24,23 @@ class Question extends Model
         'answer'
     ];
 
+    /*
+     * Question attribute accessor.
+     */
+    public function getQuestionAttribute($value)
+    {
+        return ucwords($value);
+    }
+
+    /*
+     * Question attribute mutator.
+     */
+    public function setQuestionAttribute($value)
+    {
+        $this->attributes['question'] = strtolower($value);
+    }
+
+
     /**
      * Returns the exam to which this question belongs.
      *

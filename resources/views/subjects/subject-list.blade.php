@@ -5,6 +5,7 @@
         <h3 class="title-block"><i class="step fi-list-thumbnails"></i>List of Subjects</h3>
 
         <div class="box">
+
             @if(count($subjects) > 0)
 
                 <div class="row features">

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Requests\Request;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Teacher extends Authenticatable
@@ -29,6 +30,22 @@ class Teacher extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /*
+    * Name attribute accessor.
+    */
+    public function getNameAttribute($value)
+    {
+        return ucwords($value);
+    }
+
+    /*
+     * Name attribute mutator.
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
     /**
      * Admin can create many subjects.
      *
@@ -49,4 +66,23 @@ class Teacher extends Authenticatable
         return $this->hasMany(User::class);
     }
 
+    /**
+     * Return the subjects that has exams.
+     *
+     * @return mixed
+     */
+    public function subjectsWithExams()
+    {
+        return $this->subjects()->has('exams')->get();
+    }
+
+    /**
+     * Store subject.
+     *
+     * @param array $subject
+     */
+    public function createSubject(array $subject)
+    {
+        $this->subjects()->create($subject);
+    }
 }

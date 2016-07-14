@@ -36,6 +36,22 @@ class Exam extends Model
         $this->attributes['name'] = strtolower($value);
     }
 
+    /*
+     * Description attribute accessor.
+     */
+    public function getDescriptionAttribute($value)
+    {
+        return ucwords($value);
+    }
+
+    /*
+     * Description attribute mutator.
+     */
+    public function setDescriptionAttribute($value)
+    {
+        $this->attributes['description'] = strtolower($value);
+    }
+
     /**
      * Local scope query to return the latest exams.
      *

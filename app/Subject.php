@@ -18,6 +18,38 @@ class Subject extends Model
         'admin_id', 'name', 'description', 'photo'
     ];
 
+    /*
+  * Name attribute accessor.
+  */
+    public function getNameAttribute($value)
+    {
+        return ucwords($value);
+    }
+
+    /*
+     * Name attribute mutator.
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
+    /*
+  * Description attribute accessor.
+  */
+    public function getDescriptionAttribute($value)
+    {
+        return ucwords($value);
+    }
+
+    /*
+     * Description attribute mutator.
+     */
+    public function setDescriptionAttribute($value)
+    {
+        $this->attributes['description'] = strtolower($value);
+    }
+
     /**
      * Returns all exams for the subject.
      *
@@ -60,9 +92,33 @@ class Subject extends Model
         return $query->orderBy('created_at', 'asc')->get();
     }
 
+    /**
+     * Exam count for the subject
+     *
+     * @return mixed
+     */
     public function examCount()
     {
         return $this->exams()->count();
+    }
+
+    /**
+     * Exam count for the subject that has questions.
+     *
+     * @return mixed
+     */
+    public function examsWithQuestions() {
+        return $this->exams()->has('questions');
+    }
+
+    /**
+     * Store exam
+     *
+     * @param array $exam
+     */
+    public function createExam(array $exam)
+    {
+        $this->exams()->create($exam);
     }
 
 }

@@ -17,7 +17,7 @@ class SubjectsController extends Controller
      */
     public function all()
     {
-        $subjects = $this->user->managingTeacher()->subjects()->has('exams')->get();
+        $subjects = $this->user->managingTeacher()->subjectsWithExams();
         return view('subjects.subject-list', compact('subjects'));
     }
 
@@ -29,7 +29,7 @@ class SubjectsController extends Controller
      */
     public function exams(Subject $subject)
     {
-        $subjectExams = $subject->exams()->has('questions')->paginate(8);
+        $subjectExams = $subject->examsWithQuestions()->paginate(8);
         return view('subjects.subject-exams', compact('subject', 'subjectExams'));
     }
 }

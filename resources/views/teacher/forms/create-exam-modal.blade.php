@@ -3,6 +3,7 @@
         {{ csrf_field() }}
         <h4>Create a new Exam</h4>
         <div class="row">
+            <input type="hidden" name="subject_id" value="{{ $subject->id }}"/>
             <div class="small-12 columns">
                 <label>Exam Name
                     <input name="name" type="text" placeholder="Enter Exam name">
@@ -15,13 +16,7 @@
                 </label>
             </div>
             <div class="small-12 columns">
-                <label>Select Subject exam belongs to
-                    <select name="subject_id">
-                        @foreach($subjectNameIdArray as $examId => $examName)
-                            <option value="{{ $examId }}">{{ $examName }}</option>
-                        @endforeach
-                    </select>
-                </label>
+                <p>This will be assigned to: <b>{{ $subject->name }}</b></p>
             </div>
             <div class="small-12 columns">
                 <button class="exam-btn button" type="submit">Submit</button>

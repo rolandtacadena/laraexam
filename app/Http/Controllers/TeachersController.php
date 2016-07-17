@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exam;
 use App\Subject;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class TeachersController extends Controller
 
     public function view_subject(Subject $subject)
     {
-        return view('teacher.view-subject', compact('subject'));
+        return view('teacher.view-subject', compact('subject', 'subjectNameIdArray'));
     }
 
     /**
@@ -63,7 +64,6 @@ class TeachersController extends Controller
      */
     public function exams()
     {
-        $subjectNameIdArray = $this->teacher->subjects()->pluck('name', 'id');
         return view('teacher.exams', compact('subjectNameIdArray'));
     }
 
@@ -72,7 +72,12 @@ class TeachersController extends Controller
         $subject = Subject::findOrFail($request->input('subject_id'));
         $subject->createExam($request->all());
         flash()->success('Exam Added', 'You have successfully added a exam!');
-        return redirect()->route('teacher-exams');
+        return redirect()->route('teacher-view-subject', $subject);
+    }
+
+    public function view_exam(Subject $subject, Exam $exam)
+    {
+        return view('teacher.view-exam', compact('subject', 'exam'));
     }
 
     /**
@@ -83,6 +88,14 @@ class TeachersController extends Controller
     public function questions()
     {
         return view('teacher.questions');
+    }
+
+    public function create_question(Request $request)
+    {
+        $exam = Exam::findOrFail($request->input('exam_id'));
+        $exam->createQuestion($request->all());
+        flash()->success('Question Added', 'You have successfully added a question!');
+        return redirect()->route('teacher-view-exam', $exam);
     }
 
     /**

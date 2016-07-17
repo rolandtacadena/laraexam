@@ -40,6 +40,28 @@ class Question extends Model
         $this->attributes['question'] = strtolower($value);
     }
 
+    /**
+     * Local scope query to return the latest questions.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeLatest($query)
+    {
+        return $query->orderBy('created_at', 'desc')->get();
+    }
+
+    /**
+     * Local scope query to return the oldest questions.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeOldest($query)
+    {
+        return $query->orderBy('created_at', 'asc')->get();
+    }
+
 
     /**
      * Returns the exam to which this question belongs.

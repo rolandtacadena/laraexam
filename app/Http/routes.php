@@ -70,24 +70,34 @@ Route::group(['middleware' => ['web'], 'prefix' => 'teacher'], function () {
     // Teacher Routes
     Route::group(['as' => 'teacher-'], function() {
 
+        // Routes related to subjects tab in dashboard
         Route::get('dashboard/subjects', 'TeachersController@subjects')
             ->name('subjects');
-
-        Route::get('dashboard/subjects/{subject}', 'TeachersController@view_subject')
-            ->name('view-subject');
 
         Route::post('dashboard/subjects', 'TeachersController@create_subject')
             ->name('create-subject');
 
-        Route::get('dashboard/exams', 'TeachersController@exams')
-            ->name('exams');
+        Route::get('dashboard/subjects/{subject}', 'TeachersController@view_subject')
+            ->name('view-subject');
+
+        Route::get('dashboard/exam-{exam}', 'TeachersController@view_exam')
+            ->name('view-exam');
 
         Route::post('dashboard/exams', 'TeachersController@create_exam')
             ->name('create-exam');
 
+        Route::post('dashboard/questions/', 'TeachersController@create_question')
+            ->name('create-question');
+
+        // Routes related to exams tab in dashboard
+        Route::get('dashboard/subjects/exams', 'TeachersController@exams')
+            ->name('exams');
+
+        // Routes related to exams tab in dashboard
         Route::get('dashboard/questions', 'TeachersController@questions')
             ->name('questions');
 
+        // Routes related to exams tab in dashboard
         Route::get('dashboard/students', 'TeachersController@students')
             ->name('students');
     });

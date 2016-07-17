@@ -65,4 +65,4 @@
 
         </div>
 
-        <div class="off-canvas-content main-container" data-off-canvas-content>
+        <div class="off-canvas-content" data-off-canvas-content>

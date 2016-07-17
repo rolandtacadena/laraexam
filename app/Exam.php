@@ -115,4 +115,9 @@ class Exam extends Model
         return $this->questions()->count();
     }
 
+    public function createQuestion(array $question)
+    {
+        $this->questions()->create($question);
+    }
+
 }

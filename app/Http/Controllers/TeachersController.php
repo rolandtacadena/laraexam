@@ -41,7 +41,7 @@ class TeachersController extends Controller
 
     public function view_subject(Subject $subject)
     {
-        return view('teacher.view-subject', compact('subject', 'subjectNameIdArray'));
+        return view('teacher.view-subject', compact('subject'));
     }
 
     /**
@@ -75,9 +75,9 @@ class TeachersController extends Controller
         return redirect()->route('teacher-view-subject', $subject);
     }
 
-    public function view_exam(Subject $subject, Exam $exam)
+    public function view_exam(Exam $exam)
     {
-        return view('teacher.view-exam', compact('subject', 'exam'));
+        return view('teacher.view-exam', compact('exam'));
     }
 
     /**

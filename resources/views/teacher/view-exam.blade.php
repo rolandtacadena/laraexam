@@ -12,7 +12,7 @@
                     <h3 class="light">{{ $exam->name }}</h3>
                     <p class="lead">{{ $exam->description }}</p>
                     <div class="course-buttons">
-                        <a href="{{ route('teacher-view-subject', $subject) }}" class="exam-btn button">Back to Subject List</a>
+                        <a href="{{ route('teacher-view-subject', $exam->subject->id) }}" class="exam-btn button">Back to Subject List</a>
                         <button data-open="NewQuestionModal" class="exam-btn button">+ Create questions for this exam</button>
                     </div>
                 </div>

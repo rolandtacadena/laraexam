@@ -44,6 +44,10 @@ class TeachersController extends Controller
         return view('teacher.view-subject', compact('subject'));
     }
 
+    public function return_subject_by_id(Subject $subject) {
+        return $subject;
+    }
+
     /**
      * Store subjects.
      *
@@ -67,6 +71,12 @@ class TeachersController extends Controller
         return view('teacher.exams', compact('subjectNameIdArray'));
     }
 
+    /**
+     * Storing exam.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function create_exam(Request $request)
     {
         $subject = Subject::findOrFail($request->input('subject_id'));
@@ -75,6 +85,12 @@ class TeachersController extends Controller
         return redirect()->route('teacher-view-subject', $subject);
     }
 
+    /**
+     * Load exam view.
+     *
+     * @param Exam $exam
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function view_exam(Exam $exam)
     {
         return view('teacher.view-exam', compact('exam'));
@@ -90,6 +106,12 @@ class TeachersController extends Controller
         return view('teacher.questions');
     }
 
+    /**
+     * Storing questions.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function create_question(Request $request)
     {
         $exam = Exam::findOrFail($request->input('exam_id'));

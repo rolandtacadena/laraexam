@@ -21,32 +21,35 @@
         <div class="teacher-dashboard-content">
             <div class="row">
                 @if($exam->questionCount() > 0)
-                    <h4 class="text-center">Questions for this Exam</h4>
                     <br/>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Question</th>
-                            <th>Choice 1</th>
-                            <th>Choice 2</th>
-                            <th>Choice 3</th>
-                            <th>Choice 4</th>
-                            <th>Answer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($exam->questions as $question)
+                    <h4 class="centered-title">Questions for this Exam</h4>
+                    <br/>
+                    <div class="box">
+                        <table class="questions-for-exam">
+                            <thead>
                             <tr>
-                                <td>{{ $question->question }}</td>
-                                <td>{{ $question->choice1 }}</td>
-                                <td>{{ $question->choice2 }}</td>
-                                <td>{{ $question->choice3 }}</td>
-                                <td>{{ $question->choice4 }}</td>
-                                <td>{{ $question->answer }}</td>
+                                <th>Question</th>
+                                <th>Choice 1</th>
+                                <th>Choice 2</th>
+                                <th>Choice 3</th>
+                                <th>Choice 4</th>
+                                <th>Answer</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            @foreach($exam->questions as $question)
+                                <tr>
+                                    <td>{{ $question->question }}</td>
+                                    <td>{{ $question->choice1 }}</td>
+                                    <td>{{ $question->choice2 }}</td>
+                                    <td>{{ $question->choice3 }}</td>
+                                    <td>{{ $question->choice4 }}</td>
+                                    <td>{{ $question->answer }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 @else
                     <div class="row">
                         <p>No questions available</p>

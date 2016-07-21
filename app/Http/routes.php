@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::auth();
 
 Route::get('/', 'PagesController@index')
@@ -56,49 +55,57 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-Route::group(['middleware' => ['web'], 'prefix' => 'teacher'], function () {
+Route::group(['middleware' => ['web'], 'prefix' => 'teacher', 'as' => 'teacher-'], function () {
 
     //Teacher Login Routes...
-    Route::get('login','TeacherAuth\AuthController@showLoginForm');
-    Route::post('login','TeacherAuth\AuthController@login');
-    Route::get('logout','TeacherAuth\AuthController@logout');
+    Route::get('login','TeacherAuth\AuthController@showLoginForm')
+        ->name('login');
+    Route::post('login','TeacherAuth\AuthController@login')
+        ->name('postLogin');
+    Route::get('logout','TeacherAuth\AuthController@logout')
+        ->name('logout');
 
     // Teacher Registration Routes...
-    Route::get('register', 'TeacherAuth\AuthController@showRegistrationForm');
-    Route::post('register', 'TeacherAuth\AuthController@register');
+    Route::get('register', 'TeacherAuth\AuthController@showRegistrationForm')
+        ->name('register');
+    Route::post('register', 'TeacherAuth\AuthController@register')
+        ->name('postRegister');
 
     // Teacher Routes
-    Route::group(['as' => 'teacher-'], function() {
+    // Routes related to subjects tab in dashboard
+    Route::get('dashboard/subjects', 'TeachersController@subjects')
+        ->name('subjects');
 
-        // Routes related to subjects tab in dashboard
-        Route::get('dashboard/subjects', 'TeachersController@subjects')
-            ->name('subjects');
+    Route::post('dashboard/subjects', 'TeachersController@create_subject')
+        ->name('create-subject');
 
-        Route::post('dashboard/subjects', 'TeachersController@create_subject')
-            ->name('create-subject');
+    Route::get('dashboard/subjects/{subject}', 'TeachersController@view_subject')
+        ->name('view-subject');
 
-        Route::get('dashboard/subjects/{subject}', 'TeachersController@view_subject')
-            ->name('view-subject');
+    Route::get('dashboard/exam-{exam}', 'TeachersController@view_exam')
+        ->name('view-exam');
 
-        Route::get('dashboard/exam-{exam}', 'TeachersController@view_exam')
-            ->name('view-exam');
+    Route::post('dashboard/exams', 'TeachersController@create_exam')
+        ->name('create-exam');
 
-        Route::post('dashboard/exams', 'TeachersController@create_exam')
-            ->name('create-exam');
+    Route::post('dashboard/questions/', 'TeachersController@create_question')
+        ->name('create-question');
 
-        Route::post('dashboard/questions/', 'TeachersController@create_question')
-            ->name('create-question');
+    Route::get('ajax/subject/{subject}', 'TeachersController@return_subject_by_id');
 
-        // Routes related to exams tab in dashboard
-        Route::get('dashboard/subjects/exams', 'TeachersController@exams')
-            ->name('exams');
+    // Routes related to exams tab in dashboard
+    Route::get('dashboard/subjects/exams', 'TeachersController@exams')
+        ->name('exams');
 
-        // Routes related to exams tab in dashboard
-        Route::get('dashboard/questions', 'TeachersController@questions')
-            ->name('questions');
+    // Routes related to exams tab in dashboard
+    Route::get('dashboard/questions', 'TeachersController@questions')
+        ->name('questions');
 
-        // Routes related to exams tab in dashboard
-        Route::get('dashboard/students', 'TeachersController@students')
-            ->name('students');
-    });
+    // Routes related to exams tab in dashboard
+    Route::get('dashboard/students', 'TeachersController@students')
+        ->name('students');
+
 });
+
+//Route::get('teacher/dashboard/subjects/subject/{subject}', 'TeachersController@return_subject_by_id');
+Route::get('subject/{subject}', 'TeachersController@return_subject_by_id');

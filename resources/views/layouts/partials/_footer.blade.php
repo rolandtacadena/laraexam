@@ -52,9 +52,13 @@
 <!-- footer scripts -->
 <script src="{{ URL::asset('js/vendor/jquery.js') }}"></script>
 <script src="{{ URL::asset('js/vendor/what-input.js') }}"></script>
-<script src="{{ URL::asset('js/vendor/foundation.min.js') }}"></script>
-<script src="{{ URL::asset('js/vendor/sweetalert.min.js') }}"></script>
+<script src="{{ URL::asset('js/vendor/foundation.js') }}"></script>
 <script src="{{ URL::asset('js/app.js') }}"></script>
+<script src="{{ URL::asset('js/vendor/vue.js') }}"></script>
+<script src="{{ URL::asset('js/vendor/vue-resource.js') }}"></script>
+<script src="{{ URL::asset('js/vendor/sweetalert.min.js') }}"></script>
+
+@yield('additional-footer-scripts')
 
 <!-- sweet alert flash -->
 @include('flash')

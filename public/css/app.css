@@ -133,6 +133,18 @@ li.how-it-works {
     margin-bottom: 3em;
 }
 
+table.questions-for-exam {}
+table.questions-for-exam thead {
+    background: #167a9f;
+    color: #fff;
+}
+
+.centered-title {
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+}
+
 .subject-list h2 {
     font-family: 'Lato', sans-serif;
 }

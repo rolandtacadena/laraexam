@@ -1,6 +1,8 @@
 <div class="small reveal" id="NewSubjectModal" data-reveal>
     <form method="POST" action="{{ route('teacher-create-subject') }}">
+
         {{ csrf_field() }}
+
         <h4>Create a new Subject</h4>
         <div class="row">
             <div class="small-12 columns">

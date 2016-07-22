@@ -10,6 +10,7 @@ use App\Http\Requests;
 
 class TeachersController extends Controller
 {
+
     /**
      * Get parent's construct and set middleware.
      */

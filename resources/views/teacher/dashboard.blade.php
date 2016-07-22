@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="general-container">
         <div class="row column expanded teacher-dashboard">
 
@@ -13,7 +14,6 @@
                         <div class="dashboard-ops">
                             <button data-open="NewSubjectModal">+ Add New Subject</button>
                         </div>
-
                         <div class="row">
 
                             @foreach($teacher->subjects->chunk(3) as $set)
@@ -37,17 +37,9 @@
                         </div>
 
                     </div>
-                    <div class="tabs-panel" id="panel2v">
-                        <h4>Exams</h4>
-
-                    </div>
-                    <div class="tabs-panel" id="panel3v">
-                        <h4>Questions</h4>
-
-                    </div><div class="tabs-panel" id="panel4v">
-                        <h4>Students</h4>
-
-                    </div>
+                    <div class="tabs-panel" id="panel2v"><h4>Exams</h4></div>
+                    <div class="tabs-panel" id="panel3v"><h4>Questions</h4>
+                    </div><div class="tabs-panel" id="panel4v"><h4>Students</h4></div>
                 </div>
             </div>
         </div>

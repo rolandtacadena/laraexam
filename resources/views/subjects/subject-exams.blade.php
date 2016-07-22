@@ -12,11 +12,8 @@
                     {{  $subjectExams->links() }}
                 </div>
             </div>
-
             <div class="row">
-
                 <div class="box">
-
                     <div class="row exam-list" data-equalizer data-equalize-on="small" id="test-eq">
 
                         <!-- loop on subject's exam and take 4 -->
@@ -46,9 +43,7 @@
                         @endforeach
 
                     </div>
-
                 </div>
-
             </div>
 
         @else

@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="general-container">
         <div class="row column">
             <div class="row general-header">
                 <h4 class="title-block">Exam Summary Results for exam <b>{{ $exam->name }}</b></h4>
             </div>
-
             <div class="box correct-wrong-tally clearfix text-center">
                 <div class="correct-container small-12 medium-6 columns">
                     <h2>{{ $examScore->num_correct }}</h2>
@@ -17,9 +17,7 @@
                     <p>Wrong answers</p>
                 </div>
             </div>
-
             <br/>
-
             <div class="box clearfix">
                 <div class="row exam-results">
                     <table class="stack">

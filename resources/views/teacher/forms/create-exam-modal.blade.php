@@ -1,6 +1,8 @@
 <div class="small reveal" id="NewExamModal" data-reveal>
     <form method="POST" action="{{ route('teacher-create-exam') }}">
+
         {{ csrf_field() }}
+
         <h4>Create a new Exam</h4>
         <div class="row">
             <input type="hidden" name="subject_id" value="{{ $subject->id }}"/>

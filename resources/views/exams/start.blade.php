@@ -9,18 +9,12 @@
             <div class="box">
                 <div class="row student-exam-form">
                     <form method="POST" action="{{ route('exam-process') }}">
-
                         {{ csrf_field() }}
-
                         <!--foreign key exam_id -->
                         <input type="hidden" name="exam" value="{{ $exam->id }}"/>
-
                         @foreach($exam->questions as $question)
-
                             <fieldset class="large-12 columns">
-
                                 <legend class="question-title">{{ $question->question }}</legend>
-
                                 <input type="radio"
                                        name="questions[{{ $question->id }}]"
                                        value="{{ $question->choice1 }}"
@@ -29,7 +23,6 @@
                                 <label for="choice1-{{ $question->choice1 }}">
                                     {{ ucfirst($question->choice1) }}
                                 </label>
-
                                 <input type="radio"
                                        name="questions[{{ $question->id }}]"
                                        value="{{ $question->choice2 }}"
@@ -38,7 +31,6 @@
                                 <label for="choice2-{{ $question->choice2 }}">
                                     {{ ucfirst($question->choice2) }}
                                 </label>
-
                                 <input type="radio"
                                        name="questions[{{ $question->id }}]"
                                        value="{{ $question->choice3 }}"
@@ -47,7 +39,6 @@
                                 <label for="choice3-{{ $question->choice3 }}">
                                     {{ ucfirst($question->choice3) }}
                                 </label>
-
                                 <input type="radio"
                                        name="questions[{{ $question->id }}]"
                                        value="{{ $question->choice4 }}"
@@ -56,9 +47,7 @@
                                 <label for="choice4-{{ $question->choice4 }}">
                                     {{ ucfirst($question->choice4) }}
                                 </label>
-
                             </fieldset>
-
                             <hr/>
 
                         @endforeach

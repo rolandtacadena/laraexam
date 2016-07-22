@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="general-container">
         <div class="row column expanded teacher-dashboard">
 

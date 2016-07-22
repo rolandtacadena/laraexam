@@ -115,6 +115,11 @@ class Exam extends Model
         return $this->questions()->count();
     }
 
+    /**
+     * Store question.
+     *
+     * @param array $question
+     */
     public function createQuestion(array $question)
     {
         $this->questions()->create($question);

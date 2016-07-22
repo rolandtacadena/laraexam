@@ -67,8 +67,11 @@ class User extends Authenticatable
         return $this->belongsTo(Teacher::class);
     }
 
-    /*
+
+    /**
      * Return admin who manages the user.
+     *
+     * @return mixed
      */
     public function managingTeacher()
     {

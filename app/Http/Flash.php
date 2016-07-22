@@ -4,6 +4,15 @@ namespace App\Http;
 
 class Flash {
 
+    /**
+     * Base flash
+     *
+     * @param $title
+     * @param $message
+     * @param $level
+     * @param string $key
+     * @return mixed
+     */
     public function create($title, $message, $level, $key = 'flash_message')
     {
         return session()->flash($key, [

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="general-container no-padding">
         <section class="subject-details">
             <div class="row">
@@ -20,28 +21,43 @@
         </section>
         <div class="teacher-dashboard-content">
             <div class="row">
+
                 @if($subject->examCount() > 0)
+
                     <h4 class="centered-title">Exams for this subject</h4>
+
                     @foreach($subject->exams()->latest()->chunk(3) as $set)
+
                         <div>
+
                             @foreach($set as $exam)
+
                                 <div class="small-12 medium-3 large-2 columns text-center">
                                     <img src="{{ URL::asset('img/exam2.svg') }}">
                                     <h5 class="feature-block-header">
                                         <a href="{{ route('teacher-view-exam', $exam) }}">{{ $exam->name }}</a>
                                     </h5>
                                 </div>
+
                             @endforeach
+
                         </div>
+
                     @endforeach
+
                 @else
+
                     <div class="row">
                         <p>No subjects available</p>
                         <a data-open="NewExamModal">+ Create Exam for this subject</a>
                     </div>
+
                 @endif
+
             </div>
         </div>
     </div>
+
     @include('teacher.forms.create-exam-modal')
+
 @endsection

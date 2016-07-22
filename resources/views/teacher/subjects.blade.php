@@ -4,7 +4,9 @@
 
     <div class="general-container" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
         <div class="row column expanded teacher-dashboard">
+
             @include('teacher.teacher-nav')
+
             <div class="small-12 medium-10 large-10 columns">
                 <div class="teacher-dashboard-content">
                     <h4>Subject List</h4>
@@ -12,9 +14,13 @@
                         <button data-open="NewSubjectModal">+ Add New Subject</button>
                     </div>
                     <div class="row">
+
                         @foreach($teacher->subjects()->latest()->chunk(3) as $set)
+
                             <div>
+
                                 @foreach($set as $teacherSubject)
+
                                     <div id="subject-block" class="small-12 medium-3 large-2 columns text-center">
                                         <img src="{{ URL::asset('img/exam2.svg') }}">
                                         <h5 class="feature-block-header">
@@ -22,19 +28,28 @@
                                         </h5>
                                         <a data-open="subjectDetailsModal" v-on:click="quickSubjectDetails({{ $teacherSubject->id }})">Quick view</a>
                                     </div>
+
                                 @endforeach
+
                             </div>
+
                         @endforeach
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Quick Subject Modal Component -->
     <subject-details-modal :subject="subject"></subject-details-modal>
+
     @include('teacher.forms.create-subject-modal')
+
 @endsection
 
 @section('additional-footer-scripts')
+
     <template id="subject-details-modal-template">
         <div class="small reveal" id="subjectDetailsModal" data-reveal>
             <h1>@{{ subject.name }}</h1>
@@ -45,6 +60,7 @@
         </div>
     </template>
     <script>
+
         var ajaxRoute = '{{ route('index') }}'
         new Vue({
            el: 'body',
@@ -70,6 +86,7 @@
                             var resource = this.$resource(ajaxRoute + '/teacher/ajax/subject{/subject}');
                             resource.get({ subject: subject})
                             .then(function(response) {
+                                console.log(response.data);
                                 this.subject = response.data;
                                 $('#subjectDetailsModal').foundation('open');
                             });
@@ -82,4 +99,5 @@
             }
         });
     </script>
+
 @endsection

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="general-container">
         <div class="row">
             <div class="medium-7 columns">
                 <!-- temporary exam image -->
                 <img class="thumbnail" src="{{ URL::asset('img/home-bg-01.svg') }}">
             </div>
-
             <div class="medium-5 large-5 columns">
                 <div class="box">
                     <div class="exam-details">

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="general-container no-padding">
         <section class="subject-details">
             <div class="row">
@@ -20,7 +21,9 @@
         </section>
         <div class="teacher-dashboard-content">
             <div class="row">
+
                 @if($exam->questionCount() > 0)
+
                     <br/>
                     <h4 class="centered-title">Questions for this Exam</h4>
                     <br/>
@@ -37,7 +40,9 @@
                             </tr>
                             </thead>
                             <tbody>
+
                             @foreach($exam->questions as $question)
+
                                 <tr>
                                     <td>{{ $question->question }}</td>
                                     <td>{{ $question->choice1 }}</td>
@@ -46,18 +51,26 @@
                                     <td>{{ $question->choice4 }}</td>
                                     <td>{{ $question->answer }}</td>
                                 </tr>
+
                             @endforeach
+
                             </tbody>
                         </table>
                     </div>
+
                 @else
+
                     <div class="row">
                         <p>No questions available</p>
                         <a data-open="NewQuestionModal">+ Create Question for this subject</a>
                     </div>
+
                 @endif
+
             </div>
         </div>
     </div>
+
     @include('teacher.forms.create-question-modal')
+
 @endsection

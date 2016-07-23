@@ -20,7 +20,7 @@
             <div class="medium-12 columns">
                 <label>
                     What books did you read over summer break?
-                    <textarea rows="10" name="description" placeholder="subject description">{{ $exam->name }}</textarea>
+                    <textarea rows="10" name="description" placeholder="subject description">{{ $exam->description }}</textarea>
                 </label>
             </div>
             <div class="medium-12 columns">

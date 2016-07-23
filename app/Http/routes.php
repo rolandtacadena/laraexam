@@ -79,6 +79,9 @@ Route::group(['middleware' => ['web'], 'prefix' => 'teacher', 'as' => 'teacher-'
     Route::post('dashboard/subjects', 'TeachersController@create_subject')
         ->name('create-subject');
 
+    Route::patch('dashboard/subjects/update', 'TeachersController@update_subject')
+        ->name('update-subject');
+
     Route::get('dashboard/subjects/{subject}', 'TeachersController@view_subject')
         ->name('view-subject');
 
@@ -87,6 +90,9 @@ Route::group(['middleware' => ['web'], 'prefix' => 'teacher', 'as' => 'teacher-'
 
     Route::post('dashboard/exams', 'TeachersController@create_exam')
         ->name('create-exam');
+
+    Route::patch('dashboard/exams/update', 'TeachersController@update_exam')
+        ->name('update-exam');
 
     Route::post('dashboard/questions/', 'TeachersController@create_question')
         ->name('create-question');

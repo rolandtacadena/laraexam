@@ -3,8 +3,10 @@
 
         {{ csrf_field() }}
 
-        <h4>Create a new Subject</h4>
         <div class="row">
+            <div class="medium-12 columns">
+                <h4><b>Create a new Subject</b></h4>
+            </div>
             <div class="small-12 columns">
                 <label>Subject Name
                     <input name="name" type="text" placeholder="Enter Subject name">

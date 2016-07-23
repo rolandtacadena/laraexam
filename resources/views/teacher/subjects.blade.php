@@ -26,7 +26,7 @@
                                         <h5 class="feature-block-header">
                                             <a href="{{ route('teacher-view-subject', $teacherSubject) }}">{{ $teacherSubject->name }}</a>
                                         </h5>
-                                        <a data-open="subjectDetailsModal" v-on:click="quickSubjectDetails({{ $teacherSubject->id }})">Quick view</a>
+                                        <a data-open="subjectDetailsModalComponent" v-on:click="quickSubjectDetails({{ $teacherSubject->id }})">Quick view</a>
                                     </div>
 
                                 @endforeach
@@ -51,9 +51,12 @@
 @section('additional-footer-scripts')
 
     <template id="subject-details-modal-template">
-        <div class="small reveal" id="subjectDetailsModal" data-reveal>
+        <div class="small reveal" id="subjectDetailsModalComponent" data-reveal>
             <h1>@{{ subject.name }}</h1>
             <p>@{{ subject.description }}</p>
+            <a href="{{ route('index') }}/teacher/dashboard/subjects/@{{ subject.id }}">
+                View more details for this subject
+            </a>
             <button v-on:click="refreshSubjectData" class="close-button" data-close aria-label="Close modal" type="button">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -61,7 +64,7 @@
     </template>
     <script>
 
-        var ajaxRoute = '{{ route('index') }}'
+        var baseRoute = '{{ route('index') }}'
         new Vue({
            el: 'body',
             data: {
@@ -83,12 +86,12 @@
                     props: ['subject'],
                     methods: {
                         quickSubjectDetails: function(subject){
-                            var resource = this.$resource(ajaxRoute + '/teacher/ajax/subject{/subject}');
+                            var resource = this.$resource(baseRoute + '/teacher/ajax/subject{/subject}');
                             resource.get({ subject: subject})
                             .then(function(response) {
                                 console.log(response.data);
                                 this.subject = response.data;
-                                $('#subjectDetailsModal').foundation('open');
+                                //$('#subjectDetailsModalComponent').foundation('open');
                             });
                         },
                         refreshSubjectData: function() {

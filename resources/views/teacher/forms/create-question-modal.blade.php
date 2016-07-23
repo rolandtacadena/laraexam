@@ -3,8 +3,10 @@
 
         {{ csrf_field() }}
 
-        <h4>Create a new Question</h4>
         <div class="row">
+            <div class="medium-12 columns">
+                <h4><b>Create a new Question</b></h4>
+            </div>
             <input type="hidden" name="exam_id" value="{{ $exam->id }}"/>
             <div class="small-12 columns">
                 <label>Question

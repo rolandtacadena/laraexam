@@ -15,6 +15,7 @@
                     <div class="course-buttons">
                         <a href="{{ route('teacher-view-subject', $exam->subject->id) }}" class="exam-btn button">Back to Subject List</a>
                         <button data-open="NewQuestionModal" class="exam-btn button">+ Create questions for this exam</button>
+                        <button data-open="updateExamModal" class="exam-btn button">Edit this Exam</button>
                     </div>
                 </div>
             </div>
@@ -70,6 +71,9 @@
             </div>
         </div>
     </div>
+
+    <!-- update Exam Modal -->
+    @include('teacher.forms.update-exam-modal')
 
     @include('teacher.forms.create-question-modal')
 

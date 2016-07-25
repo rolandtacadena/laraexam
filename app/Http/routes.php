@@ -97,11 +97,16 @@ Route::group(['middleware' => ['web'], 'prefix' => 'teacher', 'as' => 'teacher-'
     Route::post('dashboard/questions/', 'TeachersController@create_question')
         ->name('create-question');
 
+    Route::patch('dashboard/questions/update', 'TeachersController@update_question')
+        ->name('update-question');
+
     // AJAX Routes
     Route::get('ajax/subject/{subject}', 'TeachersController@return_subject_by_id');
+    Route::get('ajax/question/{question}', 'TeachersController@return_question_by_id');
+    Route::get('ajax/subject-exams/{subject}', 'TeachersController@return_exams_by_subject');
 
     // Routes related to exams tab in dashboard
-    Route::get('dashboard/subjects/exams', 'TeachersController@exams')
+    Route::get('dashboard/exams', 'TeachersController@exams')
         ->name('exams');
 
     // Routes related to exams tab in dashboard
@@ -113,5 +118,3 @@ Route::group(['middleware' => ['web'], 'prefix' => 'teacher', 'as' => 'teacher-'
         ->name('students');
 
 });
-
-Route::get('subject/{subject}', 'TeachersController@return_subject_by_id');

@@ -560,4 +560,9 @@ footer p {
 
 }
 
+.reveal {
+    background-color: white;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
 

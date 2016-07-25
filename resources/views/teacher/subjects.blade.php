@@ -42,7 +42,7 @@
     </div>
 
     <!-- Quick Subject Modal Component -->
-    <subject-details-modal :subject="subject"></subject-details-modal>
+    <subject-details-modal subject="subject"></subject-details-modal>
 
     @include('teacher.forms.create-subject-modal')
 
@@ -89,9 +89,7 @@
                             var resource = this.$resource(baseRoute + '/teacher/ajax/subject{/subject}');
                             resource.get({ subject: subject})
                             .then(function(response) {
-                                console.log(response.data);
                                 this.subject = response.data;
-                                //$('#subjectDetailsModalComponent').foundation('open');
                             });
                         },
                         refreshSubjectData: function() {

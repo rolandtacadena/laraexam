@@ -18,7 +18,7 @@
             <li class="has-submenu">
                 <a href="#" class="loggedin-user-name">{{ $teacher->name }}</a>
                 <ul class="menu submenu vertical" data-submenu>
-                    <li><a href="{{ route('user-profile', $teacher->id) }}">Profile</a></li>
+                    <li><a href="{{ route('teacher-subjects') }}">Dashboard</a></li>
                     <li><a href="{{ url('teacher/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
             </li>

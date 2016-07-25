@@ -13,13 +13,13 @@
                 <h4>Update exam <b>{{ $exam->name }}</b></h4>
             </div>
             <div class="medium-12 columns">
-                <label>Input Label
+                <label>Subject name
                     <input type="text" name="name" value="{{ $exam->name }}" placeholder="subject name">
                 </label>
             </div>
             <div class="medium-12 columns">
                 <label>
-                    What books did you read over summer break?
+                    Description
                     <textarea rows="10" name="description" placeholder="subject description">{{ $exam->description }}</textarea>
                 </label>
             </div>

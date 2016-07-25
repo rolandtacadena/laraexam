@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exam;
+use App\Question;
 use App\Subject;
 use Illuminate\Http\Request;
 
@@ -57,8 +58,31 @@ class TeachersController extends Controller
      * @param Subject $subject
      * @return Subject
      */
-    public function return_subject_by_id( Subject $subject ) {
+    public function return_subject_by_id( Subject $subject )
+    {
         return $subject;
+    }
+
+    /**
+     * Used for ajax request in teacher/exams.blade.php
+     *
+     * @param Subject $subject
+     * @return mixed
+     */
+    public function return_exams_by_subject( Subject $subject )
+    {
+        return $subject->exams()->get();
+    }
+
+    /**
+     * Used for ajax request in teacher/view-exam.blade.php
+     *
+     * @param Question $question
+     * @return Question
+     */
+    public function return_question_by_id( Question $question )
+    {
+        return $question;
     }
 
     /**
@@ -98,7 +122,8 @@ class TeachersController extends Controller
      */
     public function exams()
     {
-        return view('teacher.exams', compact('subjectNameIdArray'));
+        $subjects = $this->teacher->subjects()->lists('id', 'name');
+        return view('teacher.exams', compact('subjects'));
     }
 
     /**
@@ -122,13 +147,12 @@ class TeachersController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update_exam(Request $request) {
-        $subject = Subject::findOrFail($request->input('subject_id'));
         $exam = Exam::findOrFail($request->input('exam_id'));
         $exam->update([
             'name' => $request->input( 'name' ),
             'description' => $request->input( 'description' )
         ]);
-        flash()->overlay( 'Exam Update', 'You have successfully updated ' . $subject->name . ' exam.' );
+        flash()->overlay( 'Exam Update', 'You have successfully updated ' . $exam->name . ' exam.' );
         return redirect()->route( 'teacher-view-exam', $exam );
     }
 
@@ -165,6 +189,22 @@ class TeachersController extends Controller
         $exam->createQuestion($request->all());
         flash()->success('Question Added', 'You have successfully added a question!');
         return redirect()->route('teacher-view-exam', $exam);
+    }
+
+    public function update_question(Request $request)
+    {
+        $exam = Exam::findOrFail($request->input('exam_id'));
+        $question = Question::findOrFail($request->input('question_id'));
+        $question->update([
+            'question' => $request->input( 'question' ),
+            'choice1' => $request->input( 'choice1' ),
+            'choice2' => $request->input( 'choice2' ),
+            'choice3' => $request->input( 'choice3' ),
+            'choice4' => $request->input( 'choice4' ),
+            'answer' => $request->input( 'answer' )
+        ]);
+        flash()->overlay( 'Question Update', 'You have successfully updated ' . $question->question . '.' );
+        return redirect()->route( 'teacher-view-exam', $exam );
     }
 
     /**

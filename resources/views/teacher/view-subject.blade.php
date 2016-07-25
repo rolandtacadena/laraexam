@@ -25,7 +25,7 @@
 
                 @if($subject->examCount() > 0)
 
-                    <h4 class="centered-title">Exams for this subject</h4>
+                    <h4 class="centered-title">Exams for this subject ( {{ $subject->examCount()}} )</h4>
 
                     @foreach($subject->exams()->latest()->chunk(3) as $set)
 

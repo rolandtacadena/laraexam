@@ -9,35 +9,34 @@
 
             <div class="small-12 medium-10 large-10 columns">
                 <div class="teacher-dashboard-content">
-                    <h4>Exam List</h4>
-                    <div class="dashboard-ops"><button data-open="NewExamModal">+ Add New Exam</button></div>
                     <div class="row">
+                        <label><b>Select Subject to view:</b>
+                            <select id="subject-id-value"
+                                    v-model="selectedSubject"
+                                    v-on:change="loadExamsForSelectedSubject"
+                            >
 
-                        @if($teacher->subjects->count() > 0)
+                                @foreach($subjects as $subjectKey => $subjectValue)
+                                    <option value="{{ $subjectValue }}">{{ $subjectKey }}</option>
+                                @endforeach
 
-                            @foreach($teacher->subjects as $subject)
+                            </select>
+                        </label>
 
-                                <div class="subject-exams">
-                                    <div class="small-12"><h4>{{ $subject->name }}</h4></div>
+                        <!-- show message when there is/are results -->
+                        <h4 v-if="exams.length" class="centered-title">Search Results: @{{ examCount }} exams</h4>
 
-                                    @if($subject->exams->count() > 0)
+                        <span v-if="!exams.length">No exams available.</span>
 
-                                        @foreach($subject->exams as $exam)
-
-                                            <div class="small-12 medium-3 large-2 columns text-center">
-                                                <img src="{{ URL::asset('img/exam2.svg') }}">
-                                                <h5 class="feature-block-header" style="font-size: 15px;">{{ $exam->name }}</h5>
-                                            </div>
-
-                                        @endforeach
-
-                                    @else<h5>No exams available for this subject</h5>@endif
-
-                                </div>
-                                <hr/>
-                            @endforeach
-
-                        @else<h5>No exams available</h5>@endif
+                        <!-- loop the exams object -->
+                        <div v-for="exam in exams"
+                             class="small-12 medium-3 large-2 columns text-center"
+                                >
+                            <img src="{{ URL::asset('img/exam2.svg') }}">
+                            <h5 class="feature-block-header">
+                                <a href="{{ route('index') }}/teacher/dashboard/exam-@{{ exam.id }}">@{{ exam.name }}</a>
+                            </h5>
+                        </div>
 
                     </div>
                 </div>
@@ -45,7 +44,29 @@
         </div>
     </div>
 
-    <!-- NewSubjectModal modal -->
-    @include('teacher.forms.create-exam-modal')
+@endsection
 
+@section('additional-footer-scripts')
+    <script>
+        var baseRoute = '{{ route('index') }}'
+        new Vue({
+            el: 'body',
+            data: {
+                selectedSubject: '',
+                exams: '',
+                examCount: ''
+            },
+            methods: {
+                loadExamsForSelectedSubject: function(){
+                    var resource = this.$resource(baseRoute + '/teacher/ajax/subject-exams{/subject}');
+                    resource.get({ subject: this.selectedSubject})
+                    .then(function(response) {
+                        this.exams = response.data;
+                        this.examCount = this.exams.length;
+                        console.log(this.exams);
+                    });
+                }
+            }
+        });
+    </script>
 @endsection

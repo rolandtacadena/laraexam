@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page.title')
+    How It Works
+@endsection
+
 @section('content')
     <div class="general-container">
         <div class="how-it-works row column">

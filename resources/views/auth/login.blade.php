@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page.title')
+    User Login
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">

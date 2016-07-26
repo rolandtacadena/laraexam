@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page.title')
+    Teacher Exam - {{ $exam->name }}
+@endsection
+
 @section('content')
 
     <div class="general-container no-padding">

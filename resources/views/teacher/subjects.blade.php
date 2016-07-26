@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page.title')
+    Teacher Subjects
+@endsection
+
 @section('content')
 
     <div class="general-container" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page.title')
+    Let me test your skills
+@endsection
+
 @section('content')
 
     <div class="general-container">

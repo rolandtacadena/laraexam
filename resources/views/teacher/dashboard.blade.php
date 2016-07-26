@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page.title')
+    Teacher Dashboard
+@endsection
+
 @section('content')
 
     <div class="general-container">

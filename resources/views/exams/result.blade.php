@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page.title')
+    Exam Result for {{ $exam->name }}
+@endsection
+
 @section('content')
 
     <div class="general-container">

@@ -9,7 +9,7 @@
     <div class="general-container">
         <div class="row column expanded teacher-dashboard">
 
-            @include('teacher.teacher-nav')
+            @include('layouts.partials.navs.teacher-nav')
 
             <div class="small-12 medium-10 large-10 columns">
                 <div class="teacher-dashboard-content">

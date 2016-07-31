@@ -3,8 +3,9 @@
     @if ($studentSignedIn)
 
         <ul class="menu">
-            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
             <li><a href="{{ route('user-profile', $user->id) }}">Profile</a></li>
+            <li><a href="{{ route('user-dashboard', $user->id) }}">Dashboard</a></li>
+            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
         </ul>
 
     @elseif ($teacherSignedIn)

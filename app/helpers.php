@@ -16,3 +16,7 @@ function flash($title = null, $message = null)
     }
     return $flash->info($title, $message);
 }
+
+function limit_string($string) {
+    return str_limit($string, 15);
+}

@@ -93,11 +93,15 @@ a:visited { background: #074E68; }
 #widemenu li.has-submenu:hover,
 #widemenu li.has-submenu:hover ul > li { border-bottom: none; }
 
-li.how-it-works {
+li.how-it-works,
+li.manual {
     background: #aeaeae;
 }
-.how-it-works a { color: #333 !important;}
-.how-it-works a:hover { color: red; }
+.how-it-works a,
+.manual a { color: #333 !important;}
+
+.how-it-works a:hover,
+.manual a:hover { color: red; }
 
 #widemenu ul li a {
     color: #333; line-height: 2; font-weight: bold; }

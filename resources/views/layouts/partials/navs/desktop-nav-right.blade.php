@@ -3,18 +3,19 @@
 
         @if ($studentSignedIn)
 
+            <li class="manual"><a href="left_wide_11">User Manual</a></li>
             <li class="has-submenu">
                 <a href="#" class="loggedin-user-name">{{ $user->name }}</a>
                 <ul class="menu submenu vertical" data-submenu>
                     <li><a href="{{ route('user-profile', $user->id) }}">Profile</a></li>
                     <li><a href="{{ route('user-dashboard', $user->id) }}">Dashboard</a></li>
-                    <li><a href="{{ route('user-settings', $user->id) }}">Settings</a></li>
                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
             </li>
 
         @elseif($teacherSignedIn)
 
+            <li class="manual"><a href="left_wide_11">Teacher Manual</a></li>
             <li class="has-submenu">
                 <a href="#" class="loggedin-user-name">{{ $teacher->name }}</a>
                 <ul class="menu submenu vertical" data-submenu>

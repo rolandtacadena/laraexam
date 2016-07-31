@@ -40,7 +40,7 @@
                                 <div class="small-12 medium-3 large-2 columns text-center">
                                     <img src="{{ URL::asset('img/exam2.svg') }}">
                                     <h5 class="feature-block-header">
-                                        <a href="{{ route('teacher-view-exam', $exam) }}">{{ $exam->name }}</a>
+                                        <a href="{{ route('teacher-view-exam', $exam) }}">{{ limit_string($exam->name) }}</a>
                                     </h5>
                                 </div>
 

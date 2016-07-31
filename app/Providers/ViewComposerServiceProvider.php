@@ -45,7 +45,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 
     public function composerTeacherNav()
     {
-        view()->composer(['teacher.teacher-nav'], function($view) {
+        view()->composer(['layouts.partials.navs.teacher-nav'], function($view) {
             $view->with('currentPath', \Request::path());
         });
     }

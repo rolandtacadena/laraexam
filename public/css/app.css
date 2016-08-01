@@ -21,7 +21,7 @@ h6 {
 
 a:visited { background: #074E68; }
 
-.general-container { padding: 4em 0 4em 0; }
+.general-container { padding: 2em 10px 4em 10px; }
 
 .off-canvas-content { box-shadow: none; background: #F5F5F1; }
 
@@ -86,22 +86,17 @@ a:visited { background: #074E68; }
 }
 
 #widemenu li.menu-text {
-    color: #fff;
-    background-color: #074e68; }
+    color: #000; }
 
 #widemenu li.site-logo:hover,
 #widemenu li.has-submenu:hover,
 #widemenu li.has-submenu:hover ul > li { border-bottom: none; }
 
-li.how-it-works,
-li.manual {
-    background: #aeaeae;
-}
 .how-it-works a,
-.manual a { color: #333 !important;}
+.manual a { color: #333 !important; text-decoration: underline; }
 
-.how-it-works a:hover,
-.manual a:hover { color: red; }
+.how-it-works:hover,
+.manual:hover { background: none; }
 
 #widemenu ul li a {
     color: #333; line-height: 2; font-weight: bold; }
@@ -110,7 +105,12 @@ li.manual {
     border-color: #666 transparent transparent; }
 
 #site-logo a, #site-logo-mobile {
-    color: #fff !important; text-transform: uppercase; padding: 0 !important; }
+    color: #074E68 !important;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 0 !important;
+    letter-spacing: 2px; }
 
 .home-hero {
     padding: 7em 0;
@@ -118,7 +118,6 @@ li.manual {
 
 .home-hero h1, .home-hero h2 {
     font-family: 'Lato', sans-serif;
-    font-weight: 200;
 }
 
 .features h3 {
@@ -387,6 +386,13 @@ table.questions-for-exam thead {
 
 
 /*foundation override*/
+.top-bar, .top-bar ul { background: #f5f5f1; }
+.top-bar-right ul > li:hover,
+.top-bar-left ul > li:hover {
+    background: none;
+    text-decoration: underline;
+}
+
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after { right: 11px; }
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
     float: left;

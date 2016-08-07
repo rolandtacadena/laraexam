@@ -85,4 +85,16 @@ class Teacher extends Authenticatable
     {
         $this->subjects()->create($subject);
     }
+
+
+    /**
+     * Store new student.
+     *
+     * @param array $student
+     */
+    public function addStudent(array $student)
+    {
+        $this->students()->create($student);
+    }
+
 }

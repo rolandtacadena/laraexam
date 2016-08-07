@@ -100,10 +100,20 @@ Route::group(['middleware' => ['web'], 'prefix' => 'teacher', 'as' => 'teacher-'
     Route::patch('dashboard/questions/update', 'TeachersController@update_question')
         ->name('update-question');
 
+    Route::post('dashboard/students', 'TeachersController@add_student')
+        ->name('add-student');
+
+    Route::patch('dashboard/students/update', 'TeachersController@update_student_status')
+        ->name('update-student-status');
+
+
     // AJAX Routes
     Route::get('ajax/subject/{subject}', 'TeachersController@return_subject_by_id');
     Route::get('ajax/question/{question}', 'TeachersController@return_question_by_id');
     Route::get('ajax/subject-exams/{subject}', 'TeachersController@return_exams_by_subject');
+    Route::get('ajax/exam-questions/{exam}', 'TeachersController@return_questions_by_exam');
+    Route::get('ajax/student/{student}', 'TeachersController@return_student_by_id');
+
 
     // Routes related to exams tab in dashboard
     Route::get('dashboard/exams', 'TeachersController@exams')

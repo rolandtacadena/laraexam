@@ -524,7 +524,15 @@ footer p {
 .exam-btn {
     background-color: #074E68; }
 
-/*Tabs*/
+/*dashboard*/
+.teacher-search-results {
+    padding: 2em 0;
+    border-top: 1px solid #e2e2e2;
+}
+
+.teacher-search-results h4 { padding-bottom: 1em; }
+
+    /*Tabs*/
 .tabs { border: none; }
 .tabs-content.vertical { border: 0; }
 .tabs-title > a:hover {

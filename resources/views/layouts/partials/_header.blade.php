@@ -9,7 +9,7 @@
     <title>LaraExam - @yield('page.title')</title>
 
     <!-- styles -->
-    <link rel="stylesheet" href="{{ URL::asset('css/foundation.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/foundation.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/sweetalert.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
 

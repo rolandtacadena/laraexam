@@ -1437,7 +1437,7 @@ var transition = Object.freeze({
    *                            cloneNode(true), so in certain
    *                            cases the anchor needs to be
    *                            non-empty to be persisted in
-   *                            templates.
+   *                            vue-templates.
    * @return {Comment|Text}
    */
 
@@ -1589,7 +1589,7 @@ var transition = Object.freeze({
         } else if ('development' !== 'production') {
           var expectedTag = options._componentNameMap && options._componentNameMap[tag];
           if (expectedTag) {
-            warn('Unknown custom element: <' + tag + '> - ' + 'did you mean <' + expectedTag + '>? ' + 'HTML is case-insensitive, remember to use kebab-case in templates.');
+            warn('Unknown custom element: <' + tag + '> - ' + 'did you mean <' + expectedTag + '>? ' + 'HTML is case-insensitive, remember to use kebab-case in vue-templates.');
           } else if (isUnknownElement(el, tag)) {
             warn('Unknown custom element: <' + tag + '> - did you ' + 'register the component correctly? For recursive components, ' + 'make sure to provide the "name" option.');
           }
@@ -3543,7 +3543,7 @@ var expression = Object.freeze({
     // its content is already a document fragment. However, iOS Safari has
     // bug when using directly cloned template content with touch
     // events and can cause crashes when the nodes are removed from DOM, so we
-    // have to treat template elements as string templates. (#2805)
+    // have to treat template elements as string vue-templates. (#2805)
     /* istanbul ignore if */
     if (isRealTemplate(node)) {
       return stringToFragment(node.innerHTML);
@@ -6081,7 +6081,7 @@ var template = Object.freeze({
         var lowerCaseName = path.toLowerCase();
         value = /[A-Z\-]/.test(name) && (el.getAttribute(lowerCaseName) || el.getAttribute(':' + lowerCaseName) || el.getAttribute('v-bind:' + lowerCaseName) || el.getAttribute(':' + lowerCaseName + '.once') || el.getAttribute('v-bind:' + lowerCaseName + '.once') || el.getAttribute(':' + lowerCaseName + '.sync') || el.getAttribute('v-bind:' + lowerCaseName + '.sync'));
         if (value) {
-          warn('Possible usage error for prop `' + lowerCaseName + '` - ' + 'did you mean `' + attr + '`? HTML is case-insensitive, remember to use ' + 'kebab-case for props in templates.', vm);
+          warn('Possible usage error for prop `' + lowerCaseName + '` - ' + 'did you mean `' + attr + '`? HTML is case-insensitive, remember to use ' + 'kebab-case for props in vue-templates.', vm);
         } else if (options.required) {
           // warn missing required
           warn('Missing required prop: ' + name, vm);

@@ -11,7 +11,7 @@
 
             @include('layouts.partials.navs.teacher-nav')
 
-            <div class="small-12 medium-10 large-10 columns">
+            <div class="small-12 medium-9 large-10 columns">
                 <div class="tabs-content vertical user-exam-history" data-tabs-content="example-vert-tabs">
                     <div class="tabs-panel is-active" id="panel1v">
                         <h4>Subjects</h4>

@@ -11,37 +11,37 @@
 
             @include('layouts.partials.navs.teacher-nav')
 
-            <div class="small-12 medium-10 large-10 columns">
+            <div class="small-12 medium-9 large-10 columns">
                 <div class="teacher-dashboard-content">
                     <div class="row">
-                        <label><b>Select Subject to view:</b>
-                            <select id="subject-id-value"
+                        <h4>Exams</h4>
+                        <hr>
+                        <div class="small-12 medium-6 large-4">
+                            <label><b>Select Subject to view:</b>
+                                <select id="subject-id-value"
                                     v-model="selectedSubject"
                                     v-on:change="loadExamsForSelectedSubject"
-                            >
-
+                                >
                                 @foreach($subjects as $subjectKey => $subjectValue)
                                     <option value="{{ $subjectValue }}">{{ $subjectKey }}</option>
                                 @endforeach
-
-                            </select>
-                        </label>
-
-                        <!-- show message when there is/are results -->
-                        <h4 v-if="exams.length" class="centered-title">Search Results: @{{ examCount }} exams</h4>
-
-                        <span v-if="!exams.length">No exams available.</span>
-
-                        <!-- loop the exams object -->
-                        <div v-for="exam in exams"
-                             class="small-12 medium-3 large-2 columns text-center"
-                                >
-                            <img src="{{ URL::asset('img/exam2.svg') }}">
-                            <h5 class="feature-block-header">
-                                <a href="{{ route('index') }}/teacher/dashboard/exam-@{{ exam.id }}">@{{ exam.name }}</a>
-                            </h5>
+                                </select>
+                            </label>
                         </div>
 
+                        <span><p>@{{ message }}</p></span>
+
+                        <div v-if="exams.length" class="small-12 columns teacher-search-results">
+                            <h4 class="centered-title">Search Results: @{{ examCount }} exams</h4>
+
+                            <!-- loop the exams object -->
+                            <div v-for="exam in exams" class="small-12 medium-3 large-2 columns text-center">
+                                <img src="{{ URL::asset('img/exam2.svg') }}">
+                                <h5 class="feature-block-header">
+                                    <a href="{{ route('index') }}/teacher/dashboard/exam-@{{ exam.id }}">@{{ exam.name }}</a>
+                                </h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,6 +58,7 @@
             data: {
                 selectedSubject: '',
                 exams: '',
+                message: 'Please Select a Subject',
                 examCount: ''
             },
             methods: {
@@ -67,7 +68,11 @@
                     .then(function(response) {
                         this.exams = response.data;
                         this.examCount = this.exams.length;
-                        console.log(this.exams);
+                        if(this.examCount > 0) {
+                            this.message = 'Please see results for the exam selected.';
+                        } else {
+                            this.message = 'No exams available for the selected subject.';
+                        }
                     });
                 }
             }

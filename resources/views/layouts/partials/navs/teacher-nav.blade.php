@@ -1,4 +1,4 @@
-<div class="small-12 medium-2 large-2 columns">
+<div class="small-12 medium-3 large-2 columns">
     <div class="box">
         <ul id="teacher-navs">
             <li class="{{ $currentPath == 'teacher/dashboard/subjects' ? 'active' : ''}}">

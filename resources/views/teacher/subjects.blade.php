@@ -11,9 +11,10 @@
 
             @include('layouts.partials.navs.teacher-nav')
 
-            <div class="small-12 medium-10 large-10 columns">
+            <div class="small-12 medium-9 large-10 columns">
                 <div class="teacher-dashboard-content">
                     <h4>Subject List</h4>
+                    <hr>
                     <div class="dashboard-ops">
                         <button data-open="NewSubjectModal">+ Add New Subject</button>
                     </div>

@@ -24,6 +24,7 @@
                             <tr>
                                 <th>Student Name</th>
                                 <th>Email</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,6 +32,7 @@
                                 <tr>
                                     <td><a v-on:click="loadStudentOnForm({{ $student->id }})" data-open="updateStudentModal">{{ $student->name }}</a></td>
                                     <td><a v-on:click="loadStudentOnForm({{ $student->id }})" data-open="updateStudentModal">{{ $student->email }}</a></td>
+                                    <td><a v-on:click="loadStudentOnForm({{ $student->id }})" data-open="updateStudentModal">{{ $student->status == true ? 'active' : 'not active' }}</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

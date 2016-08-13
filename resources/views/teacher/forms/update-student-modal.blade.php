@@ -22,6 +22,13 @@
                 </label>
             </div>
             <div class="medium-12 columns">
+                <fieldset class="large-6 columns">
+                    <legend>Student Activation</legend>
+                    <input type="radio" name="status" value="true" id="activate" :checked="student.status == 1"><label for="activate">Activate</label>
+                    <input type="radio" name="status" value="false" id="deactivate" :checked="student.status == 0"><label for="deactivate">Deactivate</label>
+                </fieldset>
+            </div>
+            <div class="medium-12 columns">
                 <button class="button exam-btn" type="submit">Update</button>
             </div>
         </div>

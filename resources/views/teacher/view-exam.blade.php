@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="large-4 medium-4 columns">
                     <!-- temp subject photo -->
-                    <img src="http://foundation.zurb.com/assets/img/smallbiz-footer.svg" alt="">
+                    <img src="{{ URL::asset('img/subj-exm.svg') }}">
                 </div>
                 <div class="large-8 medium-8 columns banner-info">
                     <h3 class="light">{{ $exam->name }}</h3>

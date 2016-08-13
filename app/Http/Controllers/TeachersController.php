@@ -248,7 +248,7 @@ class TeachersController extends Controller
         $this->teacher->addStudent($request->all());
         return redirect()->route('teacher-students');
     }
-    
+
     /**
      * Update student status.
      *
@@ -260,9 +260,9 @@ class TeachersController extends Controller
         $user = User::findOrFail($request->input('student_id'));
         $user->update([
             'name' => $request->input('name'),
-            'email' => $request->input('email')
+            'email' => $request->input('email'),
+            'status' => $request->input('status')
         ]);
-        flash()->success('dwd', 'dwdwd');
         return redirect()->route('teacher-students');
     }
 

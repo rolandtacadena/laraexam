@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
         for($i = 1; $i <= 12; $i++) {
             DB::table('users')->insert([
                 'id' => $i,
-                'teacher_id' => random_int(1, 10),
+                'teacher_id' => random_int(1, 2),
                 'name' => str_random(20),
                 'email' => str_random(20),
                 'password' => bcrypt(str_random(10)),

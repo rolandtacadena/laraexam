@@ -20,7 +20,6 @@ class TeacherTableSeeder extends Seeder
                 'name' => str_random(20),
                 'email' => str_random(20),
                 'password' => bcrypt(str_random(10)),
-                'status' => (boolean) 1,
                 'remember_token' => str_random(10),
             ]);
         }

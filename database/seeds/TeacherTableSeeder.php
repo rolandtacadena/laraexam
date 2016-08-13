@@ -15,7 +15,7 @@ class TeacherTableSeeder extends Seeder
     {
         //factory(Teacher::class, 2)->create();
         for($i = 1; $i <= 2; $i++) {
-            DB::table('users')->insert([
+            DB::table('teachers')->insert([
                 'id' => $i,
                 'name' => str_random(20),
                 'email' => str_random(20),

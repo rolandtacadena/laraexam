@@ -26,7 +26,7 @@
 
                                 @foreach($set as $teacherSubject)
 
-                                    <div id="subject-block" class="small-12 medium-3 large-2 columns text-center">
+                                    <div id="subject-block" class="small-12 medium-3 large-2 columns text-center dashboard-subj-exam-listing">
                                         <img src="{{ URL::asset('img/exam2.svg') }}">
                                         <h5 class="feature-block-header">
                                             <a href="{{ route('teacher-view-subject', $teacherSubject) }}">{{ $teacherSubject->name }}</a>

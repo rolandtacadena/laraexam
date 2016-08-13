@@ -112,6 +112,8 @@ a:visited { background: #074E68; }
     padding: 0 !important;
     letter-spacing: 2px; }
 
+#site-logo-mobile { color: #fff !important; }
+
 .home-hero {
     padding: 7em 0;
 }
@@ -343,6 +345,8 @@ table.questions-for-exam thead {
     position: relative;
 }
 
+.dashboard-subj-exam-listing a { color: #333; }
+
 .dashboard-ops {
     position: absolute;
     top: 10px;
@@ -352,6 +356,8 @@ table.questions-for-exam thead {
     font-size: 0.8rem;
     padding: 0.75rem 1rem;
 }
+
+
 .subject-details {
     background: #e2e2e2;
     padding: 60px 45px 20px 45px;

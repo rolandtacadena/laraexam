@@ -27,6 +27,7 @@ class UserTableSeeder extends Seeder
         }
 
         $user = User::find(1);
+        $user->teacher_id = 1;
         $user->name = 'user';
         $user->email = 'user@user.com';
         $user->password = bcrypt('user');

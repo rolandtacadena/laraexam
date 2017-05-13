@@ -15,7 +15,7 @@ class Subject extends Model
      * Attributes that are mass assignable.
      */
     protected $fillable = [
-        'admin_id', 'name', 'description', 'photo'
+        'teacher_id', 'name', 'description', 'photo'
     ];
 
     /*

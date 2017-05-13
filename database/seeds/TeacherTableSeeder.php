@@ -2,7 +2,6 @@
 
 use App\Teacher;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class TeacherTableSeeder extends Seeder
 {
@@ -13,16 +12,7 @@ class TeacherTableSeeder extends Seeder
      */
     public function run()
     {
-        //factory(Teacher::class, 2)->create();
-        for($i = 1; $i <= 2; $i++) {
-            DB::table('teachers')->insert([
-                'id' => $i,
-                'name' => str_random(20),
-                'email' => str_random(20),
-                'password' => bcrypt(str_random(10)),
-                'remember_token' => str_random(10),
-            ]);
-        }
+        factory(Teacher::class, 2)->create();
 
         $user = Teacher::find(1);
         $user->name = 'teacher';

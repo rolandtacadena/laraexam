@@ -7,13 +7,12 @@
 @section('content')
 
     <div class="general-container">
-        <div class="row column">
+        <div class="row column homepage">
             <header class="home-hero">
-                <div class="row homepage">
+                <div class="row">
                     <div class="small-8 medium-5 medium-offset-1 large-offset-2 end columns">
                         <h1 class="hero-main-header">LaravelExam</h1>
-                        <h2 class="hero-subheader">Test your knowledge on different aspects of Web Development</h2>
-
+                        <h2 class="hero-subheader">Test your knowledge on different aspects of Web Development</
                         <br>
 
                         @if($studentSignedIn)

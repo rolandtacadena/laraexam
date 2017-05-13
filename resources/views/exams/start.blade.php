@@ -23,7 +23,7 @@
                                        name="questions[{{ $question->id }}]"
                                        value="{{ $question->choice1 }}"
                                        id="choice1-{{ $question->choice1 }}"
-                                       required checked>
+                                       required>
                                 <label for="choice1-{{ $question->choice1 }}">
                                     {{ ucfirst($question->choice1) }}
                                 </label>

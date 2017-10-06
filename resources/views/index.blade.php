@@ -25,8 +25,10 @@
 
                         @else
 
-                            <a href="login" class="large button exam-btn">Student Sign In</a>
-                            <a href="teacher/login" class="large button exam-btn">Teacher Sign In</a>
+                            <div class="row">
+                                <a href="login" class="large button exam-btn">Student Sign In</a>
+                                <a href="teacher/login" class="large button exam-btn">Teacher Sign In</a>
+                            </div>
 
                         @endif
 

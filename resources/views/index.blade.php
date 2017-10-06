@@ -17,11 +17,15 @@
 
                         @if($studentSignedIn)
 
-                            <a href="{{ route('subjects-all') }}" class="large button exam-btn">Start Exam Now</a>
+                            <div class="row">
+                                <a href="{{ route('subjects-all') }}" class="large button exam-btn">Start Exam Now</a>
+                            </div>
 
                         @elseif($teacherSignedIn)
 
-                            <a href="{{ route('teacher-subjects') }}" class="large button exam-btn">Go To Teacher's Dashboard</a>
+                            <div class="row">
+                                <a href="{{ route('teacher-subjects') }}" class="large button exam-btn">Go To Teacher's Dashboard</a>
+                            </div>
 
                         @else
 

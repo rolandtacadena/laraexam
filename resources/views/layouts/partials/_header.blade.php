@@ -59,10 +59,14 @@
         <!-- "wider" top-bar menu for 'medium' and up -->
         <div id="widemenu" class="top-bar">
 
-            @include('layouts.partials.navs.desktop-nav-right')
+            <div class="row">
 
-            @include('layouts.partials.navs.desktop-nav-left')
-
+                @include('layouts.partials.navs.desktop-nav-right')
+            
+                @include('layouts.partials.navs.desktop-nav-left')
+            
+            </div>  
+            
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
